@@ -1,6 +1,6 @@
 # React + Vite
 
-This temp late prov ides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This temp late prov ide s a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently,  two official plugins are available:
 
