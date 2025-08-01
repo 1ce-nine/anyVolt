@@ -1,12 +1,15 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AboutUs from './about_us.jsx';
+import AppContent from './AppContent.jsx';
 
 function App() {
   return (
-    <>
-      {/* This is a React Fragment. It doesn't add an extra div to the DOM. */}
-      <h1>Anyvolt Placeholder Page</h1>
-      <p></p>
-    </>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AppContent/>} />
+          <Route path="/about-us" element={<AboutUs />} />
+        </Routes>
+      </BrowserRouter>
   );
 }
 
