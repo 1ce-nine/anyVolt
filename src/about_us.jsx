@@ -20,14 +20,15 @@ function Footer() {
 function AboutUs() {
   return (
     <>
-      <main>
-        <Header />
-        <ul>
-          <li>History</li>
-          <li>Mission</li>
-        </ul>
-        <Footer />
-      </main>
+      <title>About Us</title>
+        <main>
+          <Header />
+          <ul>
+            <li>History</li>
+            <li>Mission</li>
+          </ul>
+          <Footer />
+        </main>
     </>
   );
 }
