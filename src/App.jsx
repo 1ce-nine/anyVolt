@@ -4,12 +4,14 @@ import AppContent from './AppContent.jsx';
 
 function App() {
   return (
+    <div className='app-wrapper'>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppContent/>} />
           <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </BrowserRouter>
+    </div>
   );
 }
 

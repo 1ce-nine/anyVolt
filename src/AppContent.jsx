@@ -7,9 +7,10 @@ function AppContent() {
     <>
       <title>Anyvolt</title>
         <Container>
-          <Row>
-            <Col>
-              <h1>Anyvolt Placeholder Page</h1>
+          <Row >
+            /* Centre the text */
+            <Col className="text-center">
+              <h1 style={{color: 'white'}}>Anyvolt</h1>
             </Col>
           </Row>
         </Container>
