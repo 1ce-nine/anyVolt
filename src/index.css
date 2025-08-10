@@ -9,7 +9,7 @@ body {
   margin: 0;
 }
 
-h1 {
+.anyvolt-logo {
   /* Assign default heading font */
   font-family: 'Orbitron', 'sans-serif';
 }
@@ -19,4 +19,10 @@ h1 {
   background-color: rgb(13, 0, 70) !important;
   width: 100vw;
   min-height: 100vh;
+}
+
+.button-transparent {
+  background-color: transparent !important;
+  border: none !important;
+  color: white !important;
 }

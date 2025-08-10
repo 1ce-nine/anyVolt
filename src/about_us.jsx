@@ -1,13 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
-function Header() {
-  return(
-    <header>
-      About Us
-    </header>
-  )
-}
 
 function Footer() {
   return (
@@ -21,8 +15,8 @@ function AboutUs() {
   return (
     <>
       <title>About Us</title>
+        <Header />
         <main>
-          <Header />
           <ul>
             <li>History</li>
             <li>Mission</li>
@@ -32,7 +26,5 @@ function AboutUs() {
     </>
   );
 }
-
-
 
 export default AboutUs;
