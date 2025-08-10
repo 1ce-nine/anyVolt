@@ -26,3 +26,7 @@ body {
   border: none !important;
   color: white !important;
 }
+
+.page-heading {
+  color: white 
+}

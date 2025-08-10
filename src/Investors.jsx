@@ -11,22 +11,20 @@ function Footer() {
   )
 }
 
-function AboutUs() {
+function Investors() {
   return (
     <>
-      <title>About Us</title>
+      <title>Investors</title>
         <Header />
         <main>
-            <h1 className="page-heading">About Us</h1>
-          
-          <ul>
-            <li>History</li>
-            <li>Mission</li>
-          </ul>
+        <h1 className="page-heading">Investors</h1>
+            <ul>
+                <li>insert incredible web page here</li>
+            </ul>
           <Footer />
         </main>
     </>
   );
 }
 
-export default AboutUs;
+export default Investors;

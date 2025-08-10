@@ -9,21 +9,24 @@ function Header() {
       <Container>
         <Row className="header-row align-items-center pb-5 pt-3">
           <Col xs={2}>
-            <img 
-              src={anyvoltLogo} 
-              alt="Anyvolt Logo" 
-              style={{width: '50%', height: 'auto'}}/>
+            <Link to="/">
+              <img
+                src={anyvoltLogo} 
+                alt="Anyvolt Logo" 
+                style={{width: '50%', height: 'auto'}}
+              />
+            </Link>
           </Col>
 
           <Col xs={6}>
             <Button as={Link} to="/about-us" className='button-transparent'>
               About Us
             </Button>
-            <Button className='button-transparent'>Services</Button>
-            <Button className='button-transparent'>Products</Button>
-            <Button className='button-transparent'>Investors</Button>
-            <Button className='button-transparent'>Contact</Button>
-            <Button className='button-transparent'>News</Button>
+            <Button as={Link} to ="/services" className='button-transparent'>Services</Button>
+            <Button as={Link} to ="/products" className='button-transparent'>Products</Button>
+            <Button as={Link} to ="/investors" className='button-transparent'>Investors</Button>
+            <Button as={Link} to ="/contact" className='button-transparent'>Contact</Button>
+            <Button as={Link} to ="/news" className='button-transparent'>News</Button>
             <Button className='button-transparent'>Search</Button>
           </Col>
 
