@@ -1,19 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import anyvoltLogo from './assets/anyvolt_pic.webp';
-
-
-
-
-function Footer() {
-  return (
-    <footer>
-      <Link to="/">Back to Home</Link>
-    </footer>
-  )
-}
 
 function LogInPage() {
   return (
@@ -52,6 +42,7 @@ function LogInPage() {
               </Col>
             </Row>
           </Container>
+          <Footer />
         </main>
 
     </>

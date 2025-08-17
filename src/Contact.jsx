@@ -1,15 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 
-function Footer() {
-  return (
-    <footer>
-      <Link to="/">Back to Home</Link>
-    </footer>
-  )
-}
+
 
 function Contact() {
   return (
