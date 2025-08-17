@@ -9,11 +9,14 @@ function Home() {
             <main>
                 <Container>
                     <Row className="align-items-center header-row">
-                        <Col xs={4}>
-                            <p className="anyvolt-logo" style={{color: 'white', fontSize: '48px'}}>AnyVolt</p>
+                        <Col md={6}>
+                            <p className="anyvolt-logo" style={{color: 'white', fontSize: '64px', fontWeight: '700', marginBottom: 0}}>AnyVolt</p>
+                            <p className="anyvolt-logo" style={{color: 'white', fontSize: '24px', marginBottom: 0}}>Empowering Every Voltage,</p>
+                            <p className="anyvolt-logo" style={{color: 'white', fontSize: '24px'}}>Every Innovation,</p>
+                            <p style={{color: 'white', fontSize: '12'}}>Enter text about company here</p>
                         </Col>
-                        <Col>
-                            <img src={homeImage} alt="Anyvolt Engine Image" style={{width: '70%', height: 'auto'}}/>
+                        <Col md={6}>
+                            <img src={homeImage} alt="Anyvolt Engine Image" className="img-fluid" style={{ height: 'auto'}}/>
                         </Col>
                     </Row>
                 </Container>     

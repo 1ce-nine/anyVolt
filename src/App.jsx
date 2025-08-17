@@ -6,6 +6,7 @@ import Products from './Products.jsx';
 import Investors from './Investors.jsx';
 import Contact from './Contact.jsx';
 import News from './News.jsx';
+import LogInPage from './LoginPage.jsx';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/investors" element={<Investors />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
+          <Route path="/loginpage" element={<LogInPage />} />
         </Routes>
       </BrowserRouter>
     </div>
