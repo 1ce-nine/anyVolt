@@ -56,7 +56,6 @@ function AboutUs() {
                         <li>Energy efficiency optimization</li>
                         <li>Advanced materials & manufacturing</li>                                                
                       </ul>
-
                     </p>
                   </div>
                 </Col>
