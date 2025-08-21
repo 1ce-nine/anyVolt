@@ -16,11 +16,28 @@ function Footer() {
         <hr className="white-line"></hr>
         <Row>
           <Col xs={3}>
-            <img src={xLogo} alt="x logo" className="img-fluid me-3" style={{ height: 'auto'}}/>
-            <img src={instagramLogo} alt="instagram logo" className="img-fluid me-3" style={{ height: 'auto'}}/>
-            <img src={youtubeLogo} alt="youtube logo" className="img-fluid me-3" style={{ height: 'auto'}}/>
-            <img src={linkedinLogo} alt="linkedin logo" className="img-fluid" style={{ height: 'auto'}}/>
+            {/* Footer link to X */}
+            <a href="https://x.com/" target="_blank">
+              <img src={xLogo} alt="x logo" className="img-fluid me-3" style={{ height: 'auto'}}/>
+            </a>
+
+            {/* Footer link to Instagram */}
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src={instagramLogo} alt="instagram logo" className="img-fluid me-3" style={{ height: 'auto'}}/>
+            </a>
+
+            {/* Footer link to YouTube */}
+            <a href="https://www.youtube.com/" target="_blank">
+              <img src={youtubeLogo} alt="youtube logo" className="img-fluid me-3" style={{ height: 'auto'}}/>
+            </a> 
+
+            {/* Footer link to LinkedIn */}    
+            <a href="https://www.linkedin.com/feed/" target="_blank">
+              <img src={linkedinLogo} alt="linkedin logo" className="img-fluid" style={{ height: 'auto'}}/>
+            </a> 
+
           </Col>
+          
           <Col xs={3}>
             <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Use cases</p>
             <p style={{color: 'white', fontSize: '11px'}}>Online whiteboard</p>
@@ -30,7 +47,7 @@ function Footer() {
             <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Help</p>
             <p style={{color: 'white', fontSize: '11px'}}>FAQ</p>
             <p style={{color: 'white', fontSize: '11px'}}>Customer Service</p>
-            <p style={{color: 'white', fontSize: '11px'}}>Contact Us</p>            
+            <Link to="/contact" className="footer-link">Contact Us</Link> 
           </Col>
           <Col xs={3}>
             <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Other</p>

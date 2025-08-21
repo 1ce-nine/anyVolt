@@ -70,3 +70,13 @@ body {
   background-color: white;
   margin: 20px 0; /* Adds some space above and below the line */
 }
+
+.footer-link {
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 12px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
