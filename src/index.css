@@ -14,11 +14,56 @@ body {
   font-family: 'Orbitron', 'sans-serif';
 }
 
-/* Class selector that targets all elements with the class name app-warpper */
-.app-wrapper {
-  background-color: rgb(13, 0, 70) !important;
-  width: 100vw;
+
+.root-wrapper {
+  background-color: #00041a;
   min-height: 100vh;
+  position: relative;
+}
+
+.app-wrapper {
+  position: relative;
+  z-index: 1; 
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0; 
+}
+
+
+.orb-purple {
+  background-color: #610daf54;
+  width: 600px;
+  height: 400px;
+  top: 15%;
+  right: 15%;
+}
+
+.orb-aqua-1 {
+  background-color: #225ddb9a;
+  width: 450px;
+  height: 350px;
+  top: 2%;
+  left: 0%;
+}
+
+.orb-aqua-2 {
+  background-color: #00ffff1a;
+  width: 450px;
+  height: 300px;
+  top: 70%;
+  right: 10%;
+}
+
+.orb-dark-1 {
+  background-color: #9300b836;
+  width: 600px;
+  height: 350px;
+  top: 55%;
+  right: 60%;
 }
 
 .button-transparent {
@@ -40,28 +85,6 @@ body {
 
 .login-form label{
   color: white
-}
-
-.orb-1 {
-  position: absolute;
-  top: 10%;
-  left: 15%;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%; /* Makes it a circle */
-  background-color: #3b50a3; /* A base color for the orb */
-  box-shadow: 0 0 100px 50px #3b50a3; /* This creates the glow */
-}
-
-.orb-2 {
-  position: absolute;
-  top: 70%;
-  left: 80%;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #6a1a7f; /* Another color */
-  box-shadow: 0 0 80px 40px #6a1a7f;
 }
 
 .white-line {
@@ -92,3 +115,4 @@ body {
   font-size: 16px;
   font-weight: 600;
 }
+
