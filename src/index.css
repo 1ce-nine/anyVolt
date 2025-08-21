@@ -80,3 +80,15 @@ body {
 .footer-link:hover {
   text-decoration: underline;
 }
+
+.home-paragraph {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.home-paragraph-small {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
