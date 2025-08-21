@@ -23,7 +23,7 @@ function Header() {
           </Col>
 
           {/* Display the quick link buttons across the Header */}
-          <Col xs={6}>
+          <Col xs={7}>
             <Button as={Link} to="/about-us" className='button-transparent'>About Us</Button>
             <Button as={Link} to ="/services" className='button-transparent'>Services</Button>
             <Button as={Link} to ="/products" className='button-transparent'>Products</Button>
@@ -33,7 +33,7 @@ function Header() {
             <Button className='button-transparent'>Search</Button>
           </Col>
           {/* Display the login and sign up buttons to the Header and provide inline styles*/}    
-          <Col xs={4} className="d-flex justify-content-end header-buttons">
+          <Col xs={3} className="d-flex justify-content-end header-buttons">
             <Button as={Link} to ="/loginpage"
               style={{
                 backgroundColor: '#3f1e63',

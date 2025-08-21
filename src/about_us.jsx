@@ -33,6 +33,9 @@ function AboutUs() {
                       conversion solutions tailored to a wide range of industries, 
                       specializing in high-performance AI-driven electric motors.
                     </p>
+                    <p style={{color: 'white',}}>
+                      Our expertise in motor design allows us to create solutions tailored to specific needs, including power, efficiency, size, and integration requirements. We provide end-to-end development from concept to final prototype. 
+                    </p>
                   </div>
                 </Col>
                 <Col md={6}>
