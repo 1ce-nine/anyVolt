@@ -90,6 +90,7 @@ html, body {
   color: white
 }
 
+
 .white-line {
   border: 0;
   height: 3px; /* The thickness of the line */
@@ -119,3 +120,6 @@ html, body {
   font-weight: 600;
 }
 
+.no-margin-paragraphs p {
+  margin: 0;
+}
