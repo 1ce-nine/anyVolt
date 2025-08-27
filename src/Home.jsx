@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import homeImage from './assets/img_1.webp';
 import xLogo from './assets/x_logo.png';
 import instagramLogo from './assets/instagram_logo.png';
 import youtubeLogo from './assets/youtube_logo.png';
 import linkedinLogo from './assets/linkedin_logo.png';
+import homePageOne from './assets/home-page-1.png';
+import homePageTwo from './assets/home-page-2.png';
+import homePageThree from './assets/home-page-3.png';
+import Subscribe from './Subscribe';
 
 function Home() {
     return (
@@ -47,20 +51,22 @@ function Home() {
                                 <a href="https://www.linkedin.com/feed/" target="_blank">
                                   <img src={linkedinLogo} alt="linkedin logo" className="img-fluid" style={{ height: 'auto'}}/>
                                 </a>                                         
-
-
-
-
-
-
-                                
                             </div>      
                         </Col>
                         <Col md={6}>
-                            <img src={homeImage} alt="Anyvolt Engine Image" className="img-fluid" style={{ height: 'auto'}}/>
+                            <img src={homeImage} alt="Anyvolt Engine Image" className="img-fluid rounded-5" style={{ height: 'auto'}}/>
+                        </Col>
+                    </Row>
+
+                    <Row className="pt-5">
+                        <Col className="d-flex justify-content-center">
+                            <img src={homePageOne} alt="home-image-1" className="img-fluid" style={{ height: 'auto'}}/>
+                            <img src={homePageTwo} alt="home-image-2" className="img-fluid" style={{ height: 'auto'}}/>         
+                            <img src={homePageThree} alt="home-image-3" className="img-fluid" style={{ height: 'auto'}}/>                                                   
                         </Col>
                     </Row>
                 </Container>     
+                <Subscribe />
             </main>
         </>
     );

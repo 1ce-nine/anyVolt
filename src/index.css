@@ -123,3 +123,29 @@ html, body {
 .no-margin-paragraphs p {
   margin: 0;
 }
+
+.subscribe-heading {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.subscribe-button {
+  background-color: #8A2BE2;
+  border-color: #8A2BE2;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+}
+
+.subscribe-button:hover {
+  background-color: #6a1cd2;
+  border-color: #6a1cd2;
+}
+
+.white-line {
+  /* Your existing styles for the white line */
+  border: 0;
+  height: 3px;
+  background-color: white;
+  margin: 20px 0;
+}

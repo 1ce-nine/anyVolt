@@ -35,7 +35,6 @@ function Footer() {
             <a href="https://www.linkedin.com/feed/" target="_blank">
               <img src={linkedinLogo} alt="linkedin logo" className="img-fluid" style={{ height: 'auto'}}/>
             </a> 
-
           </Col>
           
           <Col xs={3}>
