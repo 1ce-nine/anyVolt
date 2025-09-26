@@ -30,7 +30,6 @@ function Header() {
             <Button as={Link} to ="/investors" className='button-transparent'>Investors</Button>
             <Button as={Link} to ="/contact" className='button-transparent'>Contact</Button>
             <Button as={Link} to ="/news" className='button-transparent'>News</Button>
-            <Button className='button-transparent'>Search</Button>
           </Col>
           {/* Display the login and sign up buttons to the Header and provide inline styles*/}    
           <Col xs={3} className="d-flex justify-content-end header-buttons">
