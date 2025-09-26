@@ -6,13 +6,13 @@ function Subscribe() {
         <Container className="text-center my-5">
             <Row className="justify-content-center">
                 <Col xs={12} md={6}>
-                    <h2 className='anyvolt-logo subscribe-heading'>Subscribe</h2>
+                    <h2 className='anyvolt-logo subscribe-heading' style={{marginBottom: 5}}>Subscribe</h2>
                     <Form>
-                        <Form.Group className="mb-3" controlId="subscribeEmail">
-                            <Form.Control type="email" placeholder="Email" />
+                        <Form.Group className="mb-1 subscribe-colour-placeholder" controlId="subscribeEmail">
+                            <Form.Control className="text-center subscribe-color-placeholder" type="email" placeholder="Email"  style={{backgroundColor: 'transparent'}}/>
                         </Form.Group>
-                        <hr className="white-line" />
-                        <Button variant="primary" type="submit" className="subscribe-button">
+                        <hr className="white-line" style={{marginTop: 0}} />
+                        <Button variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                         Submit
                         </Button>
                     </Form>

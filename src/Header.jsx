@@ -34,14 +34,7 @@ function Header() {
           </Col>
           {/* Display the login and sign up buttons to the Header and provide inline styles*/}    
           <Col xs={3} className="d-flex justify-content-end header-buttons">
-            <Button as={Link} to ="/loginpage"
-              style={{
-                backgroundColor: '#3f1e63',
-                border: 'none',
-                color: 'white',
-                marginRight: '0.5rem',
-              }}
-            >
+            <Button as={Link} to ="/loginpage" className="purple-style-button" style={{marginRight: '0.5rem'}}>
               Login
             </Button>
             <Button

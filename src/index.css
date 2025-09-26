@@ -149,3 +149,21 @@ html, body {
   background-color: white;
   margin: 20px 0;
 }
+
+.subscribe-colour-placeholder .form-control::placeholder {
+  color: rgb(141, 134, 134) !important;
+  opacity: 1;
+}
+
+.subscribe-color-placeholder {
+  border: none !important;
+  box-shadow: none !important;
+  /* This is the colour of the text that is inputted by the user */
+  color: white !important;
+}
+
+.purple-style-button {         
+  background-color: #380375 !important;
+  border: none !important;
+  color: white;           
+}
