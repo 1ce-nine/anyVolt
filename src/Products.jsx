@@ -13,7 +13,7 @@ function Products() {
         <main>
           <h1 className="page-heading">Products</h1>
           <ul>
-            <li>insert incredible web page here</li>
+            <li>insert incredible web page ghere</li>
           </ul>
           <ProductLoader />
         </main>
