@@ -18,7 +18,7 @@ const ProductLoader = () => {
     try {
       // Make the API call to your Strapi backend.
       // Make sure a product with this ID exists in your Strapi admin panel!
-      const response = await axios.get('http://localhost:1337/api/tests/1');
+      const response = await axios.get('http://localhost:1337/api/products/1');
 
       // Strapi v4 nests the actual data inside a 'data' property.
       setProduct(response.data.data);
