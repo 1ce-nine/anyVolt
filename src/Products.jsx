@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import ProductLoader from "./ProductLoader";
+import SingleProductDisplay from "./SingleProductDisplay";
 
 
 function Products() {
@@ -15,7 +15,7 @@ function Products() {
           <ul>
             <li>insert incredible web page ghere</li>
           </ul>
-          <ProductLoader />
+          <SingleProductDisplay />
         </main>
       <Footer />
     </>
