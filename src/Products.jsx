@@ -1,25 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// Products.jsx
+import React, { useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import SingleProductDisplay from "./SingleProductDisplay";
+import ProductLoader from "./ProductLoader"; // ← bring in the search+results UI
+// import SingleProductDisplay from "./SingleProductDisplay"; // optional
 
+export default function Products() {
+  useEffect(() => {
+    document.title = "Products";
+  }, []);
 
-function Products() {
   return (
     <>
-      <title>Products</title>
-        <Header />
-        <main>
-          <h1 className="page-heading">Products</h1>
-          <ul>
-            <li>insert incredible web page ghere</li>
-          </ul>
-          <SingleProductDisplay />
-        </main>
+      <Header />
+      <main>
+        <h1 className="page-heading">Products</h1>
+
+        {/* Search + results (your search bar is inside here) */}
+        <ProductLoader />
+
+        {/* If you later want a standalone detail view, keep this on a /products/:slug route instead */}
+        {/* <SingleProductDisplay /> */}
+      </main>
       <Footer />
     </>
   );
 }
-
-export default Products;
