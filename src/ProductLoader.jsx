@@ -48,7 +48,7 @@ export default function ProductLoader() {
         margin: "2rem auto",
         padding: "2rem",
         borderRadius: "12px",
-        background: "#f9fafc",
+        backgroundColor: "transparent",
         boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
         fontFamily: "Arial, sans-serif",
         color: "#333",
@@ -78,7 +78,7 @@ export default function ProductLoader() {
             fontSize: "1rem",
           }}
         />
-        <button
+        <button className="purple-style-button"
           onClick={() => runSearch()}
           style={{
             padding: "0.75rem 1.5rem",
