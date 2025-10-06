@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Header";
+import Footer from "../Footer";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import servicesPlaceholder from './assets/services-placeholder-image.png';
+import servicesPlaceholder from '/src/assets/services-placeholder-image.png';
 
 function Services() {
   return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Header";
+import Footer from "../Footer";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import aboutUsImage1 from './assets/about-us-img-1.png';
-import aboutUsImage2 from './assets/about-us-img-2.png';
+import aboutUsImage1 from '/src/assets/about-us-img-1.png';
+import aboutUsImage2 from '/src/assets/about-us-img-2.png';
 
 function AboutUs() {
   return (

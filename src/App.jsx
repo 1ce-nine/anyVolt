@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AboutUs from './about_us.jsx';
+import AboutUs from '/src/web_pages/about_us.jsx';
 import AppContent from './AppContent.jsx';
-import Services from './Services.jsx';
-import Products from './Products.jsx';
-import Investors from './Investors.jsx';
-import Contact from './Contact.jsx';
-import News from './News.jsx';
-import LogInPage from './LoginPage.jsx';
+import Services from '/src/web_pages/Services.jsx';
+import Products from '/src/web_pages/Products.jsx';
+import Investors from '/src/web_pages/Investors.jsx';
+import Contact from '/src/web_pages/Contact.jsx';
+import News from '/src/web_pages/News.jsx';
+import LogInPage from '/src/web_pages/LoginPage.jsx';
 
 function App() {
   return (

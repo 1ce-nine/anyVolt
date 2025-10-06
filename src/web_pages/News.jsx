@@ -1,17 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-import Subscribe from "./Subscribe";
+import Header from "../Header";
+import Footer from "../Footer";
 
 
-function Investors() {
+function News() {
   return (
     <>
-      <title>Investors</title>
+      <title>News</title>
         <Header />
         <main>
-        <h1 className="page-heading">Investors</h1>
+        <h1 className="page-heading">News</h1>
             <ul>
                 <li>insert incredible web page here</li>
             </ul>
@@ -21,4 +20,4 @@ function Investors() {
   );
 }
 
-export default Investors;
+export default News;

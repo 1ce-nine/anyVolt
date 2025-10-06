@@ -1,8 +1,8 @@
 // Products.jsx
 import React, { useEffect } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import ProductLoader from "./ProductLoader"; // ← bring in the search+results UI
+import Header from "../Header";
+import Footer from "../Footer";
+import ProductLoader from "../ProductLoader"; // ← bring in the search+results UI
 // import SingleProductDisplay from "./SingleProductDisplay"; // optional
 
 export default function Products() {
