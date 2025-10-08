@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// src/App.jsx
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 import AboutUs from '/src/web_pages/about_us.jsx';
 import AppContent from './AppContent.jsx';
 import Services from '/src/web_pages/Services.jsx';
@@ -8,11 +10,11 @@ import Contact from '/src/web_pages/Contact.jsx';
 import News from '/src/web_pages/News.jsx';
 import LogInPage from '/src/web_pages/LoginPage.jsx';
 import ServiceCustomOrder from '/src/web_pages/ServiceCustomOrder.jsx';
+import SignupPage from '/src/web_pages/SignupPage.jsx';
 
 function App() {
   return (
-    <div className='root-wrapper'>
-      {/* These divs will be your glowing orbs */}
+    <div className="root-wrapper">
       <div className="orb orb-purple"></div>
       <div className="orb orb-aqua-1"></div>
       <div className="orb orb-aqua-2"></div>
@@ -21,15 +23,25 @@ function App() {
       <div className="app-wrapper">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<AppContent/>} />
+            {/* public pages */}
+            <Route path="/" element={<AppContent />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/products" element={<Products />} />
             <Route path="/investors" element={<Investors />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/news" element={<News />} />
-            <Route path="/loginpage" element={<LogInPage />} />
             <Route path="/servicecustomorder" element={<ServiceCustomOrder />} />
+
+            {/* auth */}
+            <Route path="/login" element={<LogInPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+
+            {/* legacy redirect: /loginpage -> /login */}
+            <Route path="/loginpage" element={<Navigate to="/login" replace />} />
+
+            {/* catch-all */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
       </div>
