@@ -7,6 +7,7 @@ import Investors from '/src/web_pages/Investors.jsx';
 import Contact from '/src/web_pages/Contact.jsx';
 import News from '/src/web_pages/News.jsx';
 import LogInPage from '/src/web_pages/LoginPage.jsx';
+import ServiceCustomOrder from '/src/web_pages/ServiceCustomOrder.jsx';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/news" element={<News />} />
             <Route path="/loginpage" element={<LogInPage />} />
+            <Route path="/servicecustomorder" element={<ServiceCustomOrder />} />
           </Routes>
         </BrowserRouter>
       </div>
