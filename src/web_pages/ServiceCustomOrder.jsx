@@ -101,19 +101,22 @@ function ServiceCustomOrder() {
               ].map((label, i) => (
                 <Form.Group className="mb-3" key={i}>
                   <Form.Label>{label}:</Form.Label>
-                  <Form.Control type="text" placeholder="Value" />
+                  <Form.Control
+                    type="text"
+                    placeholder={
+                      label === "Available Supply Voltage"
+                        ? "Enter voltage (e.g. 240V)"
+                        : label === "Rated Output Power (kW)"
+                        ? "Enter output power (e.g. 5kW)"
+                        : label === "Rated Output Torque (nM)"
+                        ? "Enter torque (e.g. 20Nm)"
+                        : label === "Maximum allowed peak current (A)"
+                        ? "Enter current (e.g. 10A)"
+                        : "Value"
+                    }
+                  />
                 </Form.Group>
               ))}
-
-              <Form.Group className="mb-3">
-                <Form.Label>Duty Cycle:</Form.Label>
-                <Form.Select>
-                    <option>Select Option</option>
-                    <option>Continuous</option>
-                    <option>Intermittent S2</option>
-                    <option>Intermittent S</option>
-                </Form.Select>
-              </Form.Group>
 
               {[
                 "Frame Size (IEC)",
@@ -125,18 +128,32 @@ function ServiceCustomOrder() {
               ].map((label, i) => (
                 <Form.Group className="mb-3" key={i}>
                   <Form.Label>{label}:</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder={
-                      label === "Brake"
-                        ? "Specify voltage and holding Torque"
-                        : label === "Gearbox (GB)"
-                        ? "Specify reduction ratio and type of GB"
-                        : label === "Any sizing restrictions to note?"
-                        ? "Maximum Length (mm), Maximum Width/Diameter: (mm)"
-                        : "Value"
-                    }
-                  />
+
+                  {/* Dropdown for Mount Type */}
+                  {label === "Foot or Flange Mount" ? (
+                    <Form.Select>
+                      <option>Select mount type</option>
+                      <option>Foot Mount</option>
+                      <option>Flange Mount</option>
+                    </Form.Select>
+                  ) : (
+                    <Form.Control
+                      type="text"
+                      placeholder={
+                        label === "Brake"
+                          ? "Specify voltage and holding torque"
+                          : label === "Gearbox (GB)"
+                          ? "Specify reduction ratio and type of gearbox"
+                          : label === "Any sizing restrictions to note?"
+                          ? "Maximum Length (mm), Maximum Width/Diameter (mm)"
+                          : label === "Frame Size (IEC)"
+                          ? "Enter standard frame size (e.g. 90L)"
+                          : label === "IP Rating"
+                          ? "Enter ingress protection rating (e.g. IP55)"
+                          : "Value"
+                      }
+                    />
+                  )}
                 </Form.Group>
               ))}
 
@@ -224,58 +241,171 @@ function ServiceCustomOrder() {
                 Service Packages (Please select which service and package)
               </h5>
 
-                <div class="package">
-                <label class="pkg-check">
-                    <input type="checkbox" id="pkg-silver" />
-                    1. Silver
-                </label>
-                <div class="pkg-details">
-                    <div><strong>Inclusions:</strong> Meetings, geometry design, winding configuration, base electromagnetic performance simulation.</div>
-                    <div class="pkg-tagline"><em>Feasibility-level design for concept validation.</em></div>
+              <div
+                style={{
+                  backgroundColor: "#e9e9e9",
+                  padding: "20px",
+                  borderRadius: "10px",
+                }}
+              >
+
+                {/* 1. Silver Package */}
+                <div style={{ marginBottom: "15px" }}>
+                  <Form.Check
+                    type="checkbox"
+                    id="pkg-silver"
+                    label="1. Silver"
+                  />
+                  <div style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    <div>
+                      <strong>Inclusions:</strong> Meetings, geometry design, winding configuration,
+                      base electromagnetic performance simulation.
+                    </div>
+                    <div style={{ fontStyle: "italic" }}>
+                      Feasibility-level design for concept validation.
+                    </div>
                     <div><strong>Rate (AUD/hr):</strong> $200–300</div>
                     <div><strong>Minimum Engagement Commitment (hrs):</strong> 20</div>
-                </div>
+                  </div>
                 </div>
 
-                <div class="package">
-                <label class="pkg-check">
-                    <input type="checkbox" id="pkg-gold" />
-                    2. Gold
-                </label>
-                <div class="pkg-details">
-                    <div><strong>Inclusions:</strong> Includes Silver + efficiency mapping, preliminary thermal analysis, new core material evaluation.</div>
-                    <div class="pkg-tagline"><em>Prototype-ready design guidance.</em></div>
+                {/* 2. Gold Package */}
+                <div style={{ marginBottom: "15px" }}>
+                  <Form.Check
+                    type="checkbox"
+                    id="pkg-gold"
+                    label="2. Gold"
+                  />
+                  <div style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    <div>
+                      <strong>Inclusions:</strong> Includes Silver + efficiency mapping, preliminary thermal analysis,
+                      new core material evaluation.
+                    </div>
+                    <div style={{ fontStyle: "italic" }}>
+                      Prototype-ready design guidance.
+                    </div>
                     <div><strong>Rate (AUD/hr):</strong> $300–400</div>
                     <div><strong>Minimum Engagement Commitment (hrs):</strong> 30</div>
-                </div>
+                  </div>
                 </div>
 
-                <div class="package">
-                <label class="pkg-check">
-                    <input type="checkbox" id="pkg-diamond" />
-                    3. Diamond
-                </label>
-                <div class="pkg-details">
-                    <div><strong>Inclusions:</strong> Includes Gold + multiphysics optimization, advanced diagnostics, prototype-ready design validation.</div>
-                    <div class="pkg-tagline"><em>Full optimization package to de-risk production.</em></div>
+                {/* 3. Diamond Package */}
+                <div>
+                  <Form.Check
+                    type="checkbox"
+                    id="pkg-diamond"
+                    label="3. Diamond"
+                  />
+                  <div style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    <div>
+                      <strong>Inclusions:</strong> Includes Gold + multiphysics optimization,
+                      advanced diagnostics, prototype-ready design validation.
+                    </div>
+                    <div style={{ fontStyle: "italic" }}>
+                      Full optimization package to de-risk production.
+                    </div>
                     <div><strong>Rate (AUD/hr):</strong> $400–500</div>
                     <div><strong>Minimum Engagement Commitment (hrs):</strong> 50</div>
+                  </div>
                 </div>
-                </div>
+              </div>
 
               {/* ================= Optional Add-Ons ================= */}
               <h5 style={{ fontWeight: 600, marginTop: "40px" }}>
                 Optional Add-On Services (Selectable with any package)
               </h5>
 
-              <Form.Group className="mb-3">
-                <Form.Select>
-                  <option>
-                    Drop Down Menu (Automation-Controller Integration, Automation-Control Program Tuning,
-                    Commissioning Automation Support (Remote), Experimental Dyno Test Report, Prototyping Support (on-site))
-                  </option>
-                </Form.Select>
-              </Form.Group>
+              <div
+                style={{
+                  backgroundColor: "#e9e9e9",
+                  padding: "20px",
+                  borderRadius: "10px",
+                }}
+              >
+                {/* 1. Controller Integration */}
+                <div style={{ marginBottom: "15px" }}>
+                  <Form.Check
+                    type="checkbox"
+                    id="controllerIntegration"
+                    label="Automation – Controller Integration"
+                  />
+                  <p style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    Selection and setup of motor controller (drive/inverter).<br />
+                    Initial parameter entry and configuration for target application.<br />
+                    <strong>Rate:</strong> +$150/hr <em>(controller unit not included)</em>
+                  </p>
+                </div>
+
+                {/* 2. Control Program Tuning */}
+                <div style={{ marginBottom: "15px" }}>
+                  <Form.Check
+                    type="checkbox"
+                    id="controlProgramTuning"
+                    label="Automation – Control Program Tuning"
+                  />
+                  <p style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    Custom tuning of control loops (e.g., torque/speed regulation).<br />
+                    Ensures smooth start-up, stable operation, and optimized performance.<br />
+                    <strong>Rate:</strong> +$180/hr <em>(controller unit not included)</em>
+                  </p>
+                </div>
+
+                {/* 3. Remote Support */}
+                <div style={{ marginBottom: "15px" }}>
+                  <Form.Check
+                    type="checkbox"
+                    id="remoteSupport"
+                    label="Commissioning Automation Support (Remote)"
+                  />
+                  <p style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    Step-by-step guidance for lab/bench commissioning.<br />
+                    Remote troubleshooting and validation.<br />
+                    <strong>Rate:</strong> +$150/hr
+                  </p>
+                </div>
+
+                {/* 4. On-Site Support */}
+                <div style={{ marginBottom: "15px" }}>
+                  <Form.Check
+                    type="checkbox"
+                    id="onSiteSupport"
+                    label="Commissioning Automation Support (On-Site)"
+                  />
+                  <p style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    On-site setup and optimization of motor + controller system.<br />
+                    Travel, accommodation, and site visit costs charged separately.<br />
+                    <strong>Rate:</strong> +$200/hr
+                  </p>
+                </div>
+
+                {/* 5. Dyno Test */}
+                <div style={{ marginBottom: "15px" }}>
+                  <Form.Check
+                    type="checkbox"
+                    id="dynoTest"
+                    label="Experimental Dyno Test Report"
+                  />
+                  <p style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    Conducting Dyno Test for torque-speed graphs and time-based thermal tests.<br />
+                    Test setup facility costs charged separately.<br />
+                    <strong>Rate:</strong> +$300/hr
+                  </p>
+                </div>
+
+                {/* 6. Prototyping Support */}
+                <div>
+                  <Form.Check
+                    type="checkbox"
+                    id="prototypeSupport"
+                    label="Prototyping Support (On-Site)"
+                  />
+                  <p style={{ fontSize: "13px", color: "#444", marginLeft: "28px" }}>
+                    On-site rectifying and optimization of motor.<br />
+                    Travel, accommodation, and site visit costs charged separately.<br />
+                    <strong>Rate:</strong> +$250/hr
+                  </p>
+                </div>
+              </div>
 
               {/* ================= Quoting & Delivery ================= */}
               <h5 style={{ fontWeight: 600, marginTop: "40px" }}>
@@ -289,7 +419,18 @@ function ServiceCustomOrder() {
               ].map((label, i) => (
                 <Form.Group className="mb-3" key={i}>
                   <Form.Label>{label}:</Form.Label>
-                  <Form.Control type="text" placeholder="Value" />
+                    <Form.Control
+                      type="text"
+                      placeholder={
+                        label === "Date First Sample Required"
+                          ? "e.g. DD/MM/YYYY"
+                          : label === "Estimated Quantity (yearly)"
+                          ? "e.g. X units per year"
+                          : label === "Delivery Address"
+                          ? "Enter full delivery address including postcode"
+                          : "Value"
+                      }
+                    />
                 </Form.Group>
               ))}
 
