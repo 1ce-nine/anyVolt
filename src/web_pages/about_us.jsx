@@ -5,6 +5,8 @@ import Footer from "/src/components/Footer";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import aboutUsImage1 from '/src/assets/about-us-img-1.png';
 import aboutUsImage2 from '/src/assets/about-us-img-2.png';
+import Subscribe from '/src/components/Subscribe';
+
 
 function AboutUs() {
   return (
@@ -63,7 +65,8 @@ function AboutUs() {
                   </div>
                 </Col>
               </Row>
-            </Container>               
+            </Container>      
+            <Subscribe />         
           </main>
         <Footer />
     </>

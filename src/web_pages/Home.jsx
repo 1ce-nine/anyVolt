@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
-import homeImage from './assets/img_1.webp';
-import xLogo from './assets/x_logo.png';
-import instagramLogo from './assets/instagram_logo.png';
-import youtubeLogo from './assets/youtube_logo.png';
-import linkedinLogo from './assets/linkedin_logo.png';
-import homePageOne from './assets/home-page-1.png';
-import homePageTwo from './assets/home-page-2.png';
-import homePageThree from './assets/home-page-3.png';
-import Subscribe from './components/Subscribe';
+import homeImage from '/src/assets/img_1.webp';
+import xLogo from '/src/assets/x_logo.png';
+import instagramLogo from '/src/assets/instagram_logo.png';
+import youtubeLogo from '/src/assets/youtube_logo.png';
+import linkedinLogo from '/src/assets/linkedin_logo.png';
+import homePageOne from '/src/assets/home-page-1.png';
+import homePageTwo from '/src/assets/home-page-2.png';
+import homePageThree from '/src/assets/home-page-3.png';
+import Subscribe from '/src/components/Subscribe';
 
 function Home() {
     return (
