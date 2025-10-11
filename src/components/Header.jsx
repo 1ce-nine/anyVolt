@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import anyvoltLogo from './assets/anyvolt_pic.webp';
-import { useAuth } from './AuthContext';
+import anyvoltLogo from '../assets/anyvolt_pic.webp';
+import { useAuth } from '../AuthContext';
 
 function Header() {
   const { user, logout } = useAuth();

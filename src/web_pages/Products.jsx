@@ -1,7 +1,7 @@
 // Products.jsx
 import React, { useEffect } from "react";
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "/src/components/Header";
+import Footer from "/src/components/Footer";
 import ProductLoader from "../ProductLoader"; // ← bring in the search+results UI
 import { Container, Row, Col } from "react-bootstrap";
 // import SingleProductDisplay from "./SingleProductDisplay"; // optional

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "/src/components/Header";
+import Footer from "/src/components/Footer";
 
 
 function News() {

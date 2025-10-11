@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "/src/components/Header";
+import Footer from "/src/components/Footer";
 import { Container, Row, Col, Button, Form, Alert } from "react-bootstrap";
 import anyvoltLogo from "/src/assets/anyvolt_pic.webp";
 import { useAuth } from "../AuthContext";

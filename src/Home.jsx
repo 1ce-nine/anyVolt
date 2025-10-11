@@ -9,7 +9,7 @@ import linkedinLogo from './assets/linkedin_logo.png';
 import homePageOne from './assets/home-page-1.png';
 import homePageTwo from './assets/home-page-2.png';
 import homePageThree from './assets/home-page-3.png';
-import Subscribe from './Subscribe';
+import Subscribe from './components/Subscribe';
 
 function Home() {
     return (

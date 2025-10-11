@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import xLogo from './assets/x_logo.png';
-import instagramLogo from './assets/instagram_logo.png';
-import youtubeLogo from './assets/youtube_logo.png';
-import linkedinLogo from './assets/linkedin_logo.png';
+import xLogo from '../assets/x_logo.png';
+import instagramLogo from '../assets/instagram_logo.png';
+import youtubeLogo from '../assets/youtube_logo.png';
+import linkedinLogo from '../assets/linkedin_logo.png';
 
 /* To be displayed at the bottom of each page */
 function Footer() {
