@@ -9,6 +9,7 @@ import linkedinLogo from '/src/assets/linkedin_logo.png';
 import homePageOne from '/src/assets/home-page-1.png';
 import homePageTwo from '/src/assets/home-page-2.png';
 import homePageThree from '/src/assets/home-page-3.png';
+import cameraImage from '/src/assets/camera_image.png';
 import Subscribe from '/src/components/Subscribe';
 
 function Home() {
@@ -63,6 +64,38 @@ function Home() {
                             <img src={homePageOne} alt="home-image-1" className="img-fluid" style={{ height: 'auto'}}/>
                             <img src={homePageTwo} alt="home-image-2" className="img-fluid" style={{ height: 'auto'}}/>         
                             <img src={homePageThree} alt="home-image-3" className="img-fluid" style={{ height: 'auto'}}/>                                                   
+                        </Col>
+                    </Row>
+
+                    <Row className="pt-5">
+                        <Col md={6} xs={6} className="text-center">
+                            <div className="img-fluid" style={{
+                                backgroundColor: '#cdcacaff',
+                                width: '600px',
+                                height: '350px',
+                                display: 'inline-flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                marginBottom: '10px',
+                                borderRadius: '8px'
+                            }}>
+                                <img src={cameraImage} alt="camera-image-1" className="img-fluid" style={{ height: 'auto'}}/>
+                            </div>
+                        </Col>
+
+                        <Col md={6} xs={6} className="text-center">
+                            <div className="img-fluid" style={{
+                                backgroundColor: '#cdcacaff',
+                                width: '600px',
+                                height: '350px',
+                                display: 'inline-flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                marginBottom: '10px',
+                                borderRadius: '8px'
+                            }}>
+                                <img src={cameraImage} alt="camera-image-1" className="img-fluid" style={{ height: 'auto'}}/>
+                            </div>
                         </Col>
                     </Row>
                 </Container>     
