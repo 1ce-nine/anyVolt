@@ -11,6 +11,7 @@ import News from '/src/web_pages/News.jsx';
 import LogInPage from '/src/web_pages/LoginPage.jsx';
 import ServiceCustomOrder from '/src/web_pages/ServiceCustomOrder.jsx';
 import SignupPage from '/src/web_pages/SignupPage.jsx';
+import FAQs from '/src/web_pages/FAQs.jsx';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/news" element={<News />} />
             <Route path="/servicecustomorder" element={<ServiceCustomOrder />} />
+            <Route path="/faqs" element={<FAQs />} />
 
             {/* auth */}
             <Route path="/login" element={<LogInPage />} />

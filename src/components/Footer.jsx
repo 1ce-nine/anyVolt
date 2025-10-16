@@ -43,8 +43,9 @@ function Footer() {
             <p style={{color: 'white', fontSize: '11px'}}>Team collaboration</p>
           </Col>
           <Col xs={3}>
-            <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Help</p>
-            <p style={{color: 'white', fontSize: '11px'}}>FAQ</p>
+            <p style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Help</p>
+            <Link to ="/faqs" className="footer-link pb-5">FAQ</Link>
+            <p></p>
             <p style={{color: 'white', fontSize: '11px'}}>Customer Service</p>
             <Link to="/contact" className="footer-link">Contact Us</Link> 
           </Col>
