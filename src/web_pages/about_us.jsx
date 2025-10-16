@@ -18,6 +18,13 @@ function AboutUs() {
           <main>
             <Container>
               <AnyVoltSlogan />    
+              <Row>
+                <p style={{color: 'white',}}>
+                  At AnyVolt Power, we’re redefining what’s possible in electric motor technology. 
+                  Specializing in AI-driven, high-performance electric motors, we design and deliver 
+                  innovative energy conversion solutions for industries where power, precision, and efficiency matter most.
+                </p>
+              </Row>
               <Row className="pt-5">
                 <Col md={6}>
                   <div>
