@@ -1,3 +1,5 @@
+{/* */}
+{/* Import necessary libraries, components etc */}
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
@@ -20,6 +22,8 @@ function Investors() {
         <main>
           <Container>
             <AnyVoltSlogan />
+
+            {/* Placeholder links to potential data points and information for potential investors. */}
             <Row className="pt-5">
               <Col className="text-center">
               <Button variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
@@ -40,6 +44,7 @@ function Investors() {
               </Col>
             </Row>
 
+            {/* Row by row, lists the different motor types and information about them to potential investors. */}
             <Row className="pt-5">
               <Col md={6}>
                   <h2 className="anyvolt-logo" style={{color: 'white', fontSize: '30px'}}>Axial-Flux Motor</h2>   
