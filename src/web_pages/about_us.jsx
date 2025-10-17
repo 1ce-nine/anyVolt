@@ -1,3 +1,5 @@
+{/* */}
+{/* Import necessary libraries, components etc */}
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "/src/components/Header";
@@ -17,7 +19,9 @@ function AboutUs() {
         <Header />
           <main>
             <Container>
-              <AnyVoltSlogan />    
+              <AnyVoltSlogan />   
+              
+              {/* Our title row */}
               <Row>
                 <p style={{color: 'white',}}>
                   At AnyVolt Power, we’re redefining what’s possible in electric motor technology. 
@@ -25,6 +29,8 @@ function AboutUs() {
                   innovative energy conversion solutions for industries where power, precision, and efficiency matter most.
                 </p>
               </Row>
+
+              {/* Our Mission row */}
               <Row className="pt-5">
                 <Col md={6}>
                   <div>
@@ -43,6 +49,7 @@ function AboutUs() {
                 </Col>
               </Row>
 
+              {/* Our Vision row */}
               <Row className="pt-5">
                 <Col md={4}>
                   <img src={aboutUsImage2} alt="About Us Image 2" className="img-fluid rounded-5" style={{ height: 'auto'}}/>

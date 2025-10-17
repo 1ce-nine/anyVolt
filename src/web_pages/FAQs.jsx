@@ -1,3 +1,5 @@
+{/* */}
+{/* Import necessary libraries, components etc */}
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
@@ -15,6 +17,8 @@ function FAQs () {
                         <Row>
                             <Col>
                             <h1 className="page-heading anyvolt-logo " style={{fontSize: '50px'}}>FAQ</h1> 
+                            {/* Create accordion from bootstrap library to provide dropdowns for FAQs. defaultActiveKey is null
+                            in order to keep dropdowns closed upon opening the page*/}
                             <Accordion className="pb-1" defaultActiveKey={null}>
                                 <Accordion.Item eventKey="0">
                                 <Accordion.Header>FAQ Topic 1</Accordion.Header>
@@ -31,6 +35,8 @@ function FAQs () {
                                 </Accordion.Item>
                             </Accordion>
 
+                            {/* Create accordion from bootstrap library to provide dropdowns for FAQs. defaultActiveKey is null
+                            in order to keep dropdowns closed upon opening the page*/}
                             <Accordion className="pb-1" defaultActiveKey={null}>
                                 <Accordion.Item eventKey="0">
                                 <Accordion.Header>FAQ Topic 2</Accordion.Header>
@@ -47,6 +53,8 @@ function FAQs () {
                                 </Accordion.Item>
                             </Accordion>
 
+                            {/* Create accordion from bootstrap library to provide dropdowns for FAQs. defaultActiveKey is null
+                            in order to keep dropdowns closed upon opening the page*/}
                             <Accordion className="pb-1" defaultActiveKey={null}>
                                 <Accordion.Item eventKey="1">
                                 <Accordion.Header>FAQ Topic 3</Accordion.Header>
@@ -63,6 +71,8 @@ function FAQs () {
                                 </Accordion.Item>
                             </Accordion>
 
+                            {/* Create accordion from bootstrap library to provide dropdowns for FAQs. defaultActiveKey is null
+                            in order to keep dropdowns closed upon opening the page*/}
                             <Accordion className="pb-1" defaultActiveKey={null}>
                                 <Accordion.Item eventKey="1">
                                 <Accordion.Header>FAQ Topic 4</Accordion.Header>
@@ -79,6 +89,8 @@ function FAQs () {
                                 </Accordion.Item>
                             </Accordion>
 
+                            {/* Create accordion from bootstrap library to provide dropdowns for FAQs. defaultActiveKey is null
+                            in order to keep dropdowns closed upon opening the page*/}
                             <Accordion className="pb-1" defaultActiveKey={null}>
                                 <Accordion.Item eventKey="1">
                                 <Accordion.Header>FAQ Topic 5</Accordion.Header>
@@ -95,6 +107,8 @@ function FAQs () {
                                 </Accordion.Item>
                             </Accordion>
 
+                            {/* Create accordion from bootstrap library to provide dropdowns for FAQs. defaultActiveKey is null
+                            in order to keep dropdowns closed upon opening the page*/}
                             <Accordion className="pb-1" defaultActiveKey={null}>
                                 <Accordion.Item eventKey="1">
                                 <Accordion.Header>FAQ Topic 6</Accordion.Header>
