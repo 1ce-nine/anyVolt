@@ -11,17 +11,21 @@ import { useAuth } from "../AuthContext";
 export default function LogInPage() {
   {/* Retrieve login function from AuthContext*/}
   const { login } = useAuth();
-  {/* Retrieve the nagivate feature from React router dom*/}
+  {/* Retrieve the navigate feature from React router dom*/}
   const nav = useNavigate();
 
   {/* Empty string for state of username/email */}
   const [identifier, setIdentifier] = useState("");
+
   {/* Empty string for state of password */}
   const [password, setPassword] = useState("");
+
   {/* Initialise state for errors */}  
   const [err, setErr] = useState(null);
+
   {/* State to control the visibility of the success message. Starts as false. */}  
   const [showSuccess, setShowSuccess] = useState(false);
+
   {/* State to track if the form is currently submitting */}  
   const [loading, setLoading] = useState(false);
 

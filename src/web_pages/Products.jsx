@@ -1,3 +1,5 @@
+{/* */}
+{/* Import necessary libraries, components etc */}
 // Products.jsx
 import React, { useEffect } from "react";
 import Header from "/src/components/Header";

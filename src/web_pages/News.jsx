@@ -1,3 +1,5 @@
+{/* */}
+{/* Import necessary libraries, components etc */}
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "/src/components/Header";
@@ -14,6 +16,7 @@ function News() {
         <main>  
           <Container>
             <h1 className="page-heading anyvolt-logo " style={{fontSize: '50px'}}>News</h1>
+            {/* Row for first news item */}
             <Row className="mt-5">
               <Col md={2}>
                 <img src={servicesPlaceholder} alt="services image" className="img-fluid me-3" style={{ height: 'auto'}}/>
@@ -41,6 +44,7 @@ function News() {
               </Col>
             </Row>
 
+            {/* Row for second news item */}
             <Row className="mt-5">
               <Col md={2}>
                 <img src={servicesPlaceholder} alt="services image" className="img-fluid me-3" style={{ height: 'auto'}}/>
