@@ -1,3 +1,5 @@
+{/* */}
+{/* Import necessary libraries, components etc */}
 // src/App.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -15,6 +17,7 @@ import FAQs from '/src/web_pages/FAQs.jsx';
 
 function App() {
   return (
+    // CSS wrapping for main pages so that orbs show in background of all pages
     <div className="root-wrapper">
       <div className="orb orb-purple"></div>
       <div className="orb orb-aqua-1"></div>
@@ -22,6 +25,7 @@ function App() {
       <div className="orb orb-dark-1"></div>
 
       <div className="app-wrapper">
+        {/* Provide path routing between pages through BroswerRouter component*/}
         <BrowserRouter>
           <Routes>
             {/* public pages */}
