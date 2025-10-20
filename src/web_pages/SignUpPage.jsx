@@ -1,25 +1,49 @@
+{/* */}
+{/* Import necessary libraries, components etc */}
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "/src/components/Header";
+import Footer from "/src/components/Footer";
 import { Container, Row, Col, Button, Form, Alert } from "react-bootstrap";
 import anyvoltLogo from "/src/assets/anyvolt_pic.webp";
 import { useAuth } from "../AuthContext";
 
 export default function SignupPage() {
+  {/* Retrieve signup function from AuthContext*/}
   const { signup } = useAuth();
+
+  {/* Retrieve the navigate feature from React router dom*/}
   const nav = useNavigate();
 
+  {/* Empty string for state of username */}
   const [username, setUsername] = useState("");
-  const [email, setEmail]       = useState("");
+
+  {/* Empty string for state of email */}
+  const [email, setEmail] = useState("");
+
+  {/* Empty string for state of password */}
   const [password, setPassword] = useState("");
+
+  {/* Initialise state for errors */}
   const [err, setErr] = useState(null);
+
+  {/* State to control the visibility of the success message. Starts as false. */}
   const [showSuccess, setShowSuccess] = useState(false);
+
+  {/* State to track if the form is currently submitting */}
   const [loading, setLoading] = useState(false);
 
+  {/* The `onSubmit` function runs when the user submits the form. 
+    It prevents the page from reloading, sets a loading state, 
+    and then uses a `try...catch` block to attempt to create a new user account.
+    If successful, it shows a success message and redirects. 
+    If it fails, it catches the error and displays it to the user. 
+    The `finally` block ensures the loading state is always turned off*/}
   async function onSubmit(e) {
     e.preventDefault();
-    setErr(null); setLoading(true);
+    setErr(null); 
+    setLoading(true);
+
     try {
       await signup(username, email, password); // calls /api/auth/local/register (creates user in Strapi)
       setShowSuccess(true);
@@ -31,6 +55,9 @@ export default function SignupPage() {
     }
   }
 
+  {/* This is the main content area. The form is built here, with its input fields linked to the state variables.
+  It also includes logic to conditionally display success or error alerts based on the component's state, 
+  and the submit button's text and disabled status change depending on the `loading` state.*/}
   return (
     <>
       <title>Sign Up</title>

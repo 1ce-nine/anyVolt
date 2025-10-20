@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import xLogo from './assets/x_logo.png';
-import instagramLogo from './assets/instagram_logo.png';
-import youtubeLogo from './assets/youtube_logo.png';
-import linkedinLogo from './assets/linkedin_logo.png';
+import xLogo from '../assets/x_logo.png';
+import instagramLogo from '../assets/instagram_logo.png';
+import youtubeLogo from '../assets/youtube_logo.png';
+import linkedinLogo from '../assets/linkedin_logo.png';
 
 /* To be displayed at the bottom of each page */
 function Footer() {
@@ -43,8 +43,9 @@ function Footer() {
             <p style={{color: 'white', fontSize: '11px'}}>Team collaboration</p>
           </Col>
           <Col xs={3}>
-            <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Help</p>
-            <p style={{color: 'white', fontSize: '11px'}}>FAQ</p>
+            <p style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Help</p>
+            <Link to ="/faqs" className="footer-link pb-5">FAQ</Link>
+            <p></p>
             <p style={{color: 'white', fontSize: '11px'}}>Customer Service</p>
             <Link to="/contact" className="footer-link">Contact Us</Link> 
           </Col>

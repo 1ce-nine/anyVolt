@@ -1,10 +1,16 @@
+{/* */}
+{/* Import necessary libraries, components etc */}
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "/src/components/Header";
+import Footer from "/src/components/Footer";
+import AnyVoltSlogan from '/src/components/AnyVoltSlogan';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import aboutUsImage1 from '/src/assets/about-us-img-1.png';
 import aboutUsImage2 from '/src/assets/about-us-img-2.png';
+import Subscribe from '/src/components/Subscribe';
+
+
 
 function AboutUs() {
   return (
@@ -13,18 +19,18 @@ function AboutUs() {
         <Header />
           <main>
             <Container>
-              <Row className="align-items-start header-row">
-                <Col md={12}>
-                    <p className="anyvolt-logo" style={{color: 'white', fontSize: '56px', fontWeight: '700', marginBottom: 0}}>AnyVolt</p>
-                    <p className="anyvolt-logo" style={{color: 'white', fontSize: '18px', marginBottom: 0}}>Empowering Every Voltage,</p>
-                    <p className="anyvolt-logo" style={{color: 'white', fontSize: '18px'}}>Every Innovation,</p>
-                    <p style={{color: 'white',}}>
-                      At AnyVolt Power, we’re redefining what’s possible in electric motor technology. 
-                      Specializing in AI-driven, high-performance electric motors, we design and deliver 
-                      innovative energy conversion solutions for industries where power, precision, and efficiency matter most.</p>
-                </Col>
-              </Row>
+              <AnyVoltSlogan />   
               
+              {/* Our title row */}
+              <Row>
+                <p style={{color: 'white',}}>
+                  At AnyVolt Power, we’re redefining what’s possible in electric motor technology. 
+                  Specializing in AI-driven, high-performance electric motors, we design and deliver 
+                  innovative energy conversion solutions for industries where power, precision, and efficiency matter most.
+                </p>
+              </Row>
+
+              {/* Our Mission row */}
               <Row className="pt-5">
                 <Col md={6}>
                   <div>
@@ -43,6 +49,7 @@ function AboutUs() {
                 </Col>
               </Row>
 
+              {/* Our Vision row */}
               <Row className="pt-5">
                 <Col md={4}>
                   <img src={aboutUsImage2} alt="About Us Image 2" className="img-fluid rounded-5" style={{ height: 'auto'}}/>
@@ -63,7 +70,8 @@ function AboutUs() {
                   </div>
                 </Col>
               </Row>
-            </Container>               
+            </Container>      
+            <Subscribe />         
           </main>
         <Footer />
     </>
