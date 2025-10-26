@@ -73,6 +73,7 @@ const PriceFilter = () => {
             placeholder="Min Price ($)"
             value={filters.minPrice}
             onChange={handleFilterChange}
+            step="50"
           />
         </Col>
         <Col md={5}>
@@ -82,11 +83,12 @@ const PriceFilter = () => {
             placeholder="Max Price ($)"
             value={filters.maxPrice}
             onChange={handleFilterChange}
+            step="50"
           />
         </Col>
         <Col md={2}>
           {/* --- Filter Button --- */}
-          <Button onClick={runFilter} disabled={loading} style={{ width: '100%' }}>
+          <Button onClick={runFilter} disabled={loading} className="purple-style-button" style={{ width: '100%' }}>
             Filter
           </Button>
         </Col>
