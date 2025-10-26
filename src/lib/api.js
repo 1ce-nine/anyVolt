@@ -44,6 +44,7 @@ const formatProduct = (p) => {
     imageUrl: abs(original),
     description: p.description ?? "",
     price: p.price ?? null,
+    voltage: p.voltage ?? null,
   };
 };
 
@@ -60,6 +61,8 @@ export async function fetchProducts({ q = "" } = {}) {
 
   return (res.data?.data ?? []).map(formatProduct); // Use the helper
 }
+
+
 
 /**
  * Fetches products from Strapi based on a filter object
@@ -86,6 +89,21 @@ export const fetchProductsByFilter = async (filters) => {
     params.filters.$and.push({
       price: {
         $lte: filters.maxPrice, // $lte = less than or equal to
+      },
+    });
+  }
+
+  if (filters?.minVoltage) {
+    params.filters.$and.push({
+      voltage: { // Use the field name from Strapi ('voltage')
+        $gte: filters.minVoltage, // $gte = greater than or equal to
+      },
+    });
+  }
+  if (filters?.maxVoltage) {
+    params.filters.$and.push({
+      voltage: { // Use the field name from Strapi ('voltage')
+        $lte: filters.maxVoltage, // $lte = less than or equal to
       },
     });
   }

@@ -5,8 +5,8 @@ import React, { useEffect } from "react";
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
 import ProductLoader from "../ProductLoader"; // ← bring in the search+results UI
-import PriceFilter from "../components/filters/PriceFilter"; // price filter component
 import { Container, Row, Col } from "react-bootstrap";
+import FilterPanel from "../components/filters/FilterPanel";
 // import SingleProductDisplay from "./SingleProductDisplay"; // optional
 
 export default function Products() {
@@ -32,7 +32,7 @@ export default function Products() {
           </Row>
 
           <Row>
-            <PriceFilter />
+            <FilterPanel />
           </Row>
         {/* If you later want a standalone detail view, keep this on a /products/:slug route instead */}
         {/* <SingleProductDisplay /> */}
