@@ -186,6 +186,11 @@ export default function ProductLoader() {
                             ${p.price}
                           </p>
                         )}
+                        {p.voltage != null && (
+                          <p style={{ margin: "0.5rem 0 0", color: "#555", fontWeight: 500 }}>
+                            Voltage: {p.voltage} kV {/* Adjust units if needed */}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </li>
