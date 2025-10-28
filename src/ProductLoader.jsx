@@ -10,6 +10,13 @@ export default function ProductLoader() {
   const [openId, setOpenId] = useState(null);
 
   const runSearch = async (q = query) => {
+    // Only run a search if the query is not empty
+    if (!q.trim()) {
+        setResults([]);
+        setHasSearched(false);
+        return;
+    }
+    
     setLoading(true);
     setErr("");
     try {
@@ -22,6 +29,15 @@ export default function ProductLoader() {
     } finally {
       setLoading(false);
     }
+  };
+
+  // NEW HANDLER: Resets all search states
+  const clearSearch = () => {
+    setQuery("");
+    setResults([]);
+    setErr("");
+    setHasSearched(false);
+    setOpenId(null);
   };
 
   const onKeyDown = (e) => e.key === "Enter" && runSearch();
@@ -45,23 +61,23 @@ export default function ProductLoader() {
     <div
       style={{
         maxWidth: "700px",
-        margin: "2rem auto",
-        padding: "2rem",
-        borderRadius: "12px",
+        margin: "0 auto", 
+        padding: "0 0", 
+        borderRadius: "0", 
         backgroundColor: "transparent",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+        boxShadow: "none",
         fontFamily: "Arial, sans-serif",
         color: "#333",
       }}
     >
-      {/* Search Bar */}
       <div
         style={{
           display: "flex",
-          marginBottom: "1.5rem",
+          marginBottom: "0", 
           border: "1px solid #ddd",
           borderRadius: "8px",
           overflow: "hidden",
+          height: '44px',
         }}
       >
         <input
@@ -76,8 +92,34 @@ export default function ProductLoader() {
             border: "none",
             outline: "none",
             fontSize: "1rem",
+            boxSizing: 'border-box',
           }}
         />
+        
+        {/* CLEAR BUTTON: Only show if there is text in the search bar */}
+        {query && (
+          <button
+            onClick={clearSearch}
+            style={{
+              // Reduced horizontal padding for a compact, icon-like button
+              padding: "0.75rem 0.5rem", 
+              border: "none",
+              background: "#f8f9fa", 
+              color: "#6c757d", 
+              cursor: "pointer",
+              fontWeight: 500,
+              fontSize: '1.25rem', // Increased size for the 'X' symbol
+              lineHeight: 1, // Ensures vertical centering
+              transition: "background 0.2s",
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.background = "#e9ecef")}
+            onMouseOut={(e) => (e.currentTarget.style.background = "#f8f9fa")}
+          >
+            &times; {/* HTML entity for a multiplication sign / 'X' */}
+          </button>
+        )}
+
+        {/* Original Search Button */}
         <button className="purple-style-button"
           onClick={() => runSearch()}
           style={{
@@ -96,9 +138,11 @@ export default function ProductLoader() {
         </button>
       </div>
 
-      {loading && <p style={{ textAlign: "center" }}>Loading…</p>}
+      {/* Content below the search bar starts here, using marginTop for separation */}
+      {loading && <p style={{ textAlign: "center", marginTop: "1.5rem"}}>Loading…</p>}
+      
       {err && (
-        <p style={{ color: "red", textAlign: "center", marginBottom: "1rem" }}>
+        <p style={{ color: "red", textAlign: "center", marginBottom: "1rem", marginTop: "1.5rem" }}>
           {err}
         </p>
       )}
@@ -107,11 +151,11 @@ export default function ProductLoader() {
       {hasSearched && !loading && !err && (
         <>
           {results.length === 0 ? (
-            <p style={{ textAlign: "center", color: "#777", fontStyle: "italic" }}>
+            <p style={{ textAlign: "center", color: "#777", fontStyle: "italic", marginTop: "1.5rem" }}>
               No products found.
             </p>
           ) : (
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <ul style={{ listStyle: "none", padding: 0, margin: "1.5rem 0 0" }}> 
               {results.map((p) => {
                 const isOpen = openId === p.id;
                 return (
@@ -188,7 +232,7 @@ export default function ProductLoader() {
                         )}
                         {p.voltage != null && (
                           <p style={{ margin: "0.5rem 0 0", color: "#555", fontWeight: 500 }}>
-                            Voltage: {p.voltage} kV {/* Adjust units if needed */}
+                            Voltage: {p.voltage} kV
                           </p>
                         )}
                       </div>
