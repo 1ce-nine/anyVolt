@@ -7,6 +7,9 @@ import { fetchProductsByFilter } from '../../lib/api';
 // Import the "dumb" filter components
 import PriceFilter from './PriceFilter';
 import VoltageFilter from './VoltageFilter';
+import MotorFamilyFilter from './MotorFamilyFilter'
+import MotorTypeFilter from './MotorTypeFilter';
+import SupplyVoltageMinFilter from './SupplyVoltageMinFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -26,6 +29,9 @@ const FilterPanel = () => {
     maxPrice: '',
     minVoltage: '',
     maxVoltage: '',
+    motorFamily: '',
+    motorType: '',
+    supplyVoltageMinV: '',
   });
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -79,6 +85,18 @@ const FilterPanel = () => {
         <VoltageFilter 
           filters={filters} 
           onFilterChange={handleFilterChange} 
+        />
+        <MotorFamilyFilter
+            value={filters.motorFamily}
+            onChange={handleFilterChange}
+        />
+        <MotorTypeFilter
+          value={filters.motorType}
+          onChange={handleFilterChange}
+        />
+        <SupplyVoltageMinFilter
+          value={filters.supplyVoltageMinV}
+          onChange={handleFilterChange}
         />
       </Form>
       

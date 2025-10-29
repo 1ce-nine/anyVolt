@@ -108,6 +108,30 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }
 
+  if (filters?.motorFamily) {
+    params.filters.$and.push({
+      motorFamily: {
+        $eq: filters.motorFamily,
+      },
+    });
+  }
+
+  if (filters?.motorType) {
+    params.filters.$and.push({
+      motorType: {
+        $eq: filters.motorType,
+      },
+    });
+  }
+
+  if (filters?.supplyVoltageMinV) {
+    params.filters.$and.push({
+      supplyVoltageMinV: {
+        $gte: filters.supplyVoltageMinV,
+      },
+    });
+  }
+
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;
