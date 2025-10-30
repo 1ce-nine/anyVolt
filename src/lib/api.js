@@ -137,7 +137,15 @@ export const fetchProductsByFilter = async (filters) => {
       supplyVoltageMaxV: {
         $lte: filters.supplyVoltageMaxV,
       },
-    })
+    });
+  }
+
+  if (filters?.ratedPowerKw) {
+    params.filters.$and.push({
+      ratedPowerKw: {
+        $gte: filters.ratedPowerKw,
+      },
+    });
   }
 
   // If no filters were added, remove the empty $and array
