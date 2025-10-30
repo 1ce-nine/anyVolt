@@ -26,9 +26,9 @@ const toPlain = (desc) => {
   return desc || "";
 };
 
-const FilterPanel = () => {
+
   // 1. State for filters, results, loading, errors is now HERE
-  const [filters, setFilters] = useState({
+  const INITIAL_FILTERS = {
     minPrice: '',
     maxPrice: '',
     minVoltage: '',
@@ -39,7 +39,10 @@ const FilterPanel = () => {
     supplyVoltageMaxV: '',
     ratedPowerKw: '',
     peakCurrentA: '',
-  });
+  };
+
+  const FilterPanel = () => {
+  const [filters, setFilters] = useState(INITIAL_FILTERS);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
@@ -68,6 +71,13 @@ const FilterPanel = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const clearFilters = () => {
+    setFilters(INITIAL_FILTERS);
+    setResults([]);
+    setHasFiltered(false);
+    setErr("");
   };
 
   return (
@@ -130,7 +140,18 @@ const FilterPanel = () => {
               Apply Filters
             </Button>
         </Col>
+
+        <Col xs="auto">
+          <Button
+            onClick={clearFilters}
+            variant="outline-secondary"
+            disabled={loading}
+            >
+              Clear
+          </Button>
+        </Col>
       </Row>
+      
 
       {/* 6. The Results Area (copied from previous PriceFilter) */}
       {loading && <p style={{ textAlign: "center" }}>Loading...</p>}
