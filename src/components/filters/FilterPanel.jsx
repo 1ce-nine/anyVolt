@@ -10,6 +10,7 @@ import VoltageFilter from './VoltageFilter';
 import MotorFamilyFilter from './MotorFamilyFilter'
 import MotorTypeFilter from './MotorTypeFilter';
 import SupplyVoltageMinFilter from './SupplyVoltageMinFilter';
+import SupplyVoltageMaxFilter from './SupplyVoltageMaxFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -32,6 +33,7 @@ const FilterPanel = () => {
     motorFamily: '',
     motorType: '',
     supplyVoltageMinV: '',
+    supplyVoltageMaxV: '',
   });
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -96,6 +98,10 @@ const FilterPanel = () => {
         />
         <SupplyVoltageMinFilter
           value={filters.supplyVoltageMinV}
+          onChange={handleFilterChange}
+        />
+        <SupplyVoltageMaxFilter
+          value={filters.supplyVoltageMaxV}
           onChange={handleFilterChange}
         />
       </Form>

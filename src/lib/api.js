@@ -132,6 +132,14 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }
 
+  if (filters?.supplyVoltageMaxV) {
+    params.filters.$and.push({
+      supplyVoltageMaxV: {
+        $lte: filters.supplyVoltageMaxV,
+      },
+    })
+  }
+
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;
