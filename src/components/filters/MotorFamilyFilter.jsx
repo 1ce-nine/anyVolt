@@ -17,7 +17,7 @@ export default function MotorFamilyFilter({ value, onChange }) {
         <Row className="mb-3 align-items-center" controlId="formMotorFamily">
             
             {/* 1. Label Column: Col md={3} to match Price/Voltage labels */}
-            <Col md={3}> 
+            <Col md={4}> 
                 <Form.Label>Motor Family:</Form.Label>
             </Col>
             

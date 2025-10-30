@@ -1,5 +1,3 @@
-// src/components/filters/RatedPowerKwFilter.jsx - MINIMUM ONLY
-
 import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 
@@ -10,7 +8,7 @@ import { Form, Row, Col } from 'react-bootstrap';
  * @param {object} props.filters - Object containing all current filter values
  * @param {function} props.onFilterChange - Handler for updating filter state
  */
-export default function RatedPowerKwFilter({ filters, onFilterChange }) {
+export default function PeakCurrentFilter({ filters, onFilterChange }) {
     // Note: We use the range filter's props structure (filters/onFilterChange)
     // to keep the logic similar to PriceFilter/VoltageFilter, even though 
     // it only has one input.
@@ -19,22 +17,20 @@ export default function RatedPowerKwFilter({ filters, onFilterChange }) {
             
             {/* Label Column: Col md={3} */}
             <Col md={4}>
-                <Form.Label>Minimum Rated Power (kW):</Form.Label>
+                <Form.Label>Peak Current:</Form.Label>
             </Col>
             
             {/* Input Column: ratedPowerMinKw (Number Field) - Col md={8} as requested */}
             <Col md={8}>
                 <Form.Control
                     type="number" 
-                    name="ratedPowerKw" // Name matches the state key
-                    placeholder="Min kW"
-                    value={filters.ratedPowerKw || ''} 
+                    name="peakCurrentA" // Name matches the state key
+                    placeholder="Peak Current"
+                    value={filters.peakCurrentA || ''} 
                     onChange={onFilterChange}                     
                     step="1"
                 />
-            </Col>
-
-            
+            </Col>      
         </Row>
     );
 }

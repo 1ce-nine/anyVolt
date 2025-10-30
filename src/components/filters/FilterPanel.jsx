@@ -12,6 +12,8 @@ import MotorTypeFilter from './MotorTypeFilter';
 import SupplyVoltageMinFilter from './SupplyVoltageMinFilter';
 import SupplyVoltageMaxFilter from './SupplyVoltageMaxFilter';
 import RatedPowerKwFilter from './RatedPowerKwFilter';
+import RatedTorqueNmFilter from './RatedTorqueNmFilter';
+import PeakCurrentFilter from './PeakCurrentFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -36,6 +38,7 @@ const FilterPanel = () => {
     supplyVoltageMinV: '',
     supplyVoltageMaxV: '',
     ratedPowerKw: '',
+    peakCurrentA: '',
   });
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -107,6 +110,14 @@ const FilterPanel = () => {
           onChange={handleFilterChange}
         />
         <RatedPowerKwFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />
+        <RatedTorqueNmFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />
+        <PeakCurrentFilter
           filters={filters}
           onFilterChange={handleFilterChange}
         />

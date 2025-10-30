@@ -148,6 +148,22 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }
 
+  if (filters?.ratedTorqueNm) {
+    params.filters.$and.push({
+      ratedTorqueNm: {
+        $gte: filters.ratedTorqueNm,
+      },
+    });
+  }
+
+  if (filters?.peakCurrentA) {
+    params.filters.$and.push({
+      peakCurrentA: {
+        $lte: filters.peakCurrentA,
+      },
+    });
+  }
+
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;

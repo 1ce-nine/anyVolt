@@ -6,7 +6,7 @@ import { Form, Row, Col } from 'react-bootstrap';
 const PriceFilter = ({ filters, onFilterChange }) => {
   return (
     <Row className="mb-3 align-items-center">
-      <Col md={3}>
+      <Col md={4}>
         <Form.Label>Price Range:</Form.Label>
       </Col>
       <Col md={4}>

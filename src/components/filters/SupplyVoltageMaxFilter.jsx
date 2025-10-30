@@ -13,7 +13,7 @@ export default function SupplyVoltageMaxFilter({ value, onChange }) {
         <Row className="mb-3 align-items-center">
             
             {/* Label Column: Col md={3} */}
-            <Col md={3}>
+            <Col md={4}>
                 <Form.Label>Max Supply Voltage (V):</Form.Label>
             </Col>
             
@@ -33,9 +33,6 @@ export default function SupplyVoltageMaxFilter({ value, onChange }) {
                     step="1"
                 />
             </Col>
-            
-            {/* No spacer needed, as 3 + 8 = 11 (leaving 1 column gap on md=12 total) */}
-            
         </Row>
     );
 }

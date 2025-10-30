@@ -33,7 +33,7 @@ export default function MotorTypeFilter({ value, onChange }) {
         <Row className="mb-3 align-items-center" controlId="formMotorType">
             
             {/* Label Column: Col md={3} */}
-            <Col md={3}> 
+            <Col md={4}> 
                 <Form.Label>Motor Type:</Form.Label>
             </Col>
             
