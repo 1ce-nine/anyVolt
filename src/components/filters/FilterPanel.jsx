@@ -14,6 +14,7 @@ import SupplyVoltageMaxFilter from './SupplyVoltageMaxFilter';
 import RatedPowerKwFilter from './RatedPowerKwFilter';
 import RatedTorqueNmFilter from './RatedTorqueNmFilter';
 import PeakCurrentFilter from './PeakCurrentFilter';
+import DutyCycleFilter from './DutyCycleFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -39,6 +40,7 @@ const toPlain = (desc) => {
     supplyVoltageMaxV: '',
     ratedPowerKw: '',
     peakCurrentA: '',
+    dutyCycle: '',
   };
 
   const FilterPanel = () => {
@@ -131,6 +133,10 @@ const toPlain = (desc) => {
           filters={filters}
           onFilterChange={handleFilterChange}
         />
+        <DutyCycleFilter
+          value={filters.dutyCycle}
+          onChange={handleFilterChange}
+        />        
       </Form>
       
       {/* 5. The Filter Button */}

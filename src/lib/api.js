@@ -164,6 +164,14 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }
 
+  if (filters?.dutyCycle) {
+    params.filters.$and.push({
+      dutyCycle: {
+        $eq: filters.dutyCycle,
+      },
+    });
+  }  
+
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;
