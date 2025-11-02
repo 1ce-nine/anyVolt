@@ -45,6 +45,8 @@ const formatProduct = (p) => {
     description: p.description ?? "",
     price: p.price ?? null,
     voltage: p.voltage ?? null,
+    ipRating: p.ipRating ?? null,
+    frameSizelec: p.frameSizelec ?? null,
   };
 };
 

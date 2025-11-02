@@ -178,6 +178,8 @@ const toPlain = (desc) => {
                   <p>{toPlain(p.description) || "No description."}</p>
                   {p.price != null && <p><strong>${p.price}</strong></p>}
                   {p.voltage != null && <p>Voltage: {p.voltage} kV</p>} 
+                  {p.ipRating != null && <p>IP Rating: {p.ipRating}</p>} 
+                  {p.frameSizelec != null && <p>Frame Size: {p.frameSizelec}</p>} 
                 </li>
               ))}
             </ul>
