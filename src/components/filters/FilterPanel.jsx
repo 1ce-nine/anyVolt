@@ -7,6 +7,14 @@ import { fetchProductsByFilter } from '../../lib/api';
 // Import the "dumb" filter components
 import PriceFilter from './PriceFilter';
 import VoltageFilter from './VoltageFilter';
+import MotorFamilyFilter from './MotorFamilyFilter'
+import MotorTypeFilter from './MotorTypeFilter';
+import SupplyVoltageMinFilter from './SupplyVoltageMinFilter';
+import SupplyVoltageMaxFilter from './SupplyVoltageMaxFilter';
+import RatedPowerKwFilter from './RatedPowerKwFilter';
+import RatedTorqueNmFilter from './RatedTorqueNmFilter';
+import PeakCurrentFilter from './PeakCurrentFilter';
+import DutyCycleFilter from './DutyCycleFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -19,14 +27,24 @@ const toPlain = (desc) => {
   return desc || "";
 };
 
-const FilterPanel = () => {
+
   // 1. State for filters, results, loading, errors is now HERE
-  const [filters, setFilters] = useState({
+  const INITIAL_FILTERS = {
     minPrice: '',
     maxPrice: '',
     minVoltage: '',
     maxVoltage: '',
-  });
+    motorFamily: '',
+    motorType: '',
+    supplyVoltageMinV: '',
+    supplyVoltageMaxV: '',
+    ratedPowerKw: '',
+    peakCurrentA: '',
+    dutyCycle: '',
+  };
+
+  const FilterPanel = () => {
+  const [filters, setFilters] = useState(INITIAL_FILTERS);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
@@ -57,6 +75,13 @@ const FilterPanel = () => {
     }
   };
 
+  const clearFilters = () => {
+    setFilters(INITIAL_FILTERS);
+    setResults([]);
+    setHasFiltered(false);
+    setErr("");
+  };
+
   return (
     // Styling similar to the previous separate filter component
     <div 
@@ -80,6 +105,38 @@ const FilterPanel = () => {
           filters={filters} 
           onFilterChange={handleFilterChange} 
         />
+        <MotorFamilyFilter
+          value={filters.motorFamily}
+          onChange={handleFilterChange}
+        />
+        <MotorTypeFilter
+          value={filters.motorType}
+          onChange={handleFilterChange}
+        />
+        <SupplyVoltageMinFilter
+          value={filters.supplyVoltageMinV}
+          onChange={handleFilterChange}
+        />
+        <SupplyVoltageMaxFilter
+          value={filters.supplyVoltageMaxV}
+          onChange={handleFilterChange}
+        />
+        <RatedPowerKwFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />
+        <RatedTorqueNmFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />
+        <PeakCurrentFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />
+        <DutyCycleFilter
+          value={filters.dutyCycle}
+          onChange={handleFilterChange}
+        />        
       </Form>
       
       {/* 5. The Filter Button */}
@@ -89,7 +146,18 @@ const FilterPanel = () => {
               Apply Filters
             </Button>
         </Col>
+
+        <Col xs="auto">
+          <Button
+            onClick={clearFilters}
+            variant="outline-secondary"
+            disabled={loading}
+            >
+              Clear
+          </Button>
+        </Col>
       </Row>
+      
 
       {/* 6. The Results Area (copied from previous PriceFilter) */}
       {loading && <p style={{ textAlign: "center" }}>Loading...</p>}
@@ -110,6 +178,8 @@ const FilterPanel = () => {
                   <p>{toPlain(p.description) || "No description."}</p>
                   {p.price != null && <p><strong>${p.price}</strong></p>}
                   {p.voltage != null && <p>Voltage: {p.voltage} kV</p>} 
+                  {p.ipRating != null && <p>IP Rating: {p.ipRating}</p>} 
+                  {p.frameSizelec != null && <p>Frame Size: {p.frameSizelec}</p>} 
                 </li>
               ))}
             </ul>

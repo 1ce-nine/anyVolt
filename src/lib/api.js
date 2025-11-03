@@ -45,6 +45,8 @@ const formatProduct = (p) => {
     description: p.description ?? "",
     price: p.price ?? null,
     voltage: p.voltage ?? null,
+    ipRating: p.ipRating ?? null,
+    frameSizelec: p.frameSizelec ?? null,
   };
 };
 
@@ -107,6 +109,70 @@ export const fetchProductsByFilter = async (filters) => {
       },
     });
   }
+
+  if (filters?.motorFamily) {
+    params.filters.$and.push({
+      motorFamily: {
+        $eq: filters.motorFamily,
+      },
+    });
+  }
+
+  if (filters?.motorType) {
+    params.filters.$and.push({
+      motorType: {
+        $eq: filters.motorType,
+      },
+    });
+  }
+
+  if (filters?.supplyVoltageMinV) {
+    params.filters.$and.push({
+      supplyVoltageMinV: {
+        $gte: filters.supplyVoltageMinV,
+      },
+    });
+  }
+
+  if (filters?.supplyVoltageMaxV) {
+    params.filters.$and.push({
+      supplyVoltageMaxV: {
+        $lte: filters.supplyVoltageMaxV,
+      },
+    });
+  }
+
+  if (filters?.ratedPowerKw) {
+    params.filters.$and.push({
+      ratedPowerKw: {
+        $gte: filters.ratedPowerKw,
+      },
+    });
+  }
+
+  if (filters?.ratedTorqueNm) {
+    params.filters.$and.push({
+      ratedTorqueNm: {
+        $gte: filters.ratedTorqueNm,
+      },
+    });
+  }
+
+  if (filters?.peakCurrentA) {
+    params.filters.$and.push({
+      peakCurrentA: {
+        $lte: filters.peakCurrentA,
+      },
+    });
+  }
+
+  if (filters?.dutyCycle) {
+    params.filters.$and.push({
+      dutyCycle: {
+        $eq: filters.dutyCycle,
+      },
+    });
+  }  
 
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {

@@ -235,6 +235,16 @@ export default function ProductLoader() {
                             Voltage: {p.voltage} kV
                           </p>
                         )}
+                        {p.ipRating != null && (
+                          <p style={{ margin: "0.5rem 0 0", color: "#555", fontWeight: 500 }}>
+                            IP Rating: {p.ipRating}
+                          </p>
+                        )}             
+                        {p.frameSizelec != null && (
+                          <p style={{ margin: "0.5rem 0 0", color: "#555", fontWeight: 500 }}>
+                            Frame Size: {p.frameSizelec}
+                          </p>
+                        )}                                       
                       </div>
                     </div>
                   </li>
