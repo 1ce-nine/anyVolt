@@ -174,6 +174,14 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }  
 
+    if (filters?.mountType) {
+    params.filters.$and.push({
+      mountType: {
+        $eq: filters.mountType,
+      },
+    });
+  }
+
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;
