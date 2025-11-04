@@ -16,6 +16,7 @@ import RatedTorqueNmFilter from './RatedTorqueNmFilter';
 import PeakCurrentFilter from './PeakCurrentFilter';
 import DutyCycleFilter from './DutyCycleFilter';
 import MountTypeFilter from './MountTypeFilter';
+import HasBrakeFilter from './HasBrakeFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -43,6 +44,7 @@ const toPlain = (desc) => {
     peakCurrentA: '',
     dutyCycle: '',
     mountType: '',
+    hasBrake: '',
   };
 
   const FilterPanel = () => {
@@ -142,7 +144,11 @@ const toPlain = (desc) => {
         <MountTypeFilter
           value={filters.mountType}
           onChange={handleFilterChange}
-        />        
+        />      
+        <HasBrakeFilter
+          value={filters.hasBrake}
+          onChange={handleFilterChange} 
+        />          
       </Form>
       
       {/* 5. The Filter Button */}
