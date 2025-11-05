@@ -15,6 +15,8 @@ import RatedPowerKwFilter from './RatedPowerKwFilter';
 import RatedTorqueNmFilter from './RatedTorqueNmFilter';
 import PeakCurrentFilter from './PeakCurrentFilter';
 import DutyCycleFilter from './DutyCycleFilter';
+import MountTypeFilter from './MountTypeFilter';
+import HasBrakeFilter from './HasBrakeFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -41,6 +43,8 @@ const toPlain = (desc) => {
     ratedPowerKw: '',
     peakCurrentA: '',
     dutyCycle: '',
+    mountType: '',
+    hasBrake: '',
   };
 
   const FilterPanel = () => {
@@ -137,6 +141,14 @@ const toPlain = (desc) => {
           value={filters.dutyCycle}
           onChange={handleFilterChange}
         />        
+        <MountTypeFilter
+          value={filters.mountType}
+          onChange={handleFilterChange}
+        />      
+        <HasBrakeFilter
+          value={filters.hasBrake}
+          onChange={handleFilterChange} 
+        />          
       </Form>
       
       {/* 5. The Filter Button */}
@@ -159,7 +171,7 @@ const toPlain = (desc) => {
       </Row>
       
 
-      {/* 6. The Results Area (copied from previous PriceFilter) */}
+      {/* 6. The Results Area */}
       {loading && <p style={{ textAlign: "center" }}>Loading...</p>}
       {err && <p style={{ color: "red", textAlign: "center" }}>{err}</p>}
 
@@ -176,10 +188,25 @@ const toPlain = (desc) => {
                 <li key={p.id} style={{ background: "white", padding: '10px', borderRadius: '8px', marginBottom: '10px' }}>
                   <h5>{p.name}</h5>
                   <p>{toPlain(p.description) || "No description."}</p>
-                  {p.price != null && <p><strong>${p.price}</strong></p>}
-                  {p.voltage != null && <p>Voltage: {p.voltage} kV</p>} 
-                  {p.ipRating != null && <p>IP Rating: {p.ipRating}</p>} 
-                  {p.frameSizelec != null && <p>Frame Size: {p.frameSizelec}</p>} 
+                    {p.price != null && <p><strong>${p.price}</strong></p>} 
+                    
+                    {/* TECHNICAL SPECS (Combined line with commas) */}
+                    {(p.voltage != null || p.ratedPowerKw != null || p.ipRating != null || p.frameSizelec != null) && (
+                     <p>
+                        {/* VOLTAGE */}
+                        {p.voltage != null && (
+                            <span>Voltage: {p.voltage} kV</span>
+                        )}
+
+                        {/* Separator 1 */}
+                        {p.voltage != null && (p.ratedPowerKw != null || p.ipRating != null || p.frameSizelec != null) && ", "} 
+                        
+                        {/* IP RATING */}
+                        {p.ipRating != null && (
+                            <span>IP Rating: {p.ipRating}</span>
+                        )}                                           
+                      </p>
+                    )}
                 </li>
               ))}
             </ul>

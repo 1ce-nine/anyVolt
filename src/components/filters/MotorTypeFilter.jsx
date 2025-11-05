@@ -1,9 +1,7 @@
-// src/components/filters/MotorTypeFilter.jsx
-
 import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 
-// List of motor type options - UPDATED WITH ALL YOUR NEW VALUES
+// List of motor type options
 const MOTORTYPE_OPTIONS = [
     { value: '', label: 'All Motor Types' },
     { value: 'Asynchronous', label: 'Asynchronous' },
@@ -40,7 +38,7 @@ export default function MotorTypeFilter({ value, onChange }) {
             {/* Input Column 1: Col md={4} */}
             <Col md={8}>
                 <Form.Select 
-                    // CRITICAL: Name matches the state key in FilterPanel ('motorType')
+                    // Name matches the state key in FilterPanel ('motorType')
                     name="motorType" 
                     
                     value={value} 
@@ -62,7 +60,7 @@ export default function MotorTypeFilter({ value, onChange }) {
             
             {/* Input Column 2: Empty Col md={4} for consistent layout spacing */}
             <Col md={4}>
-                {/* Intentionally blank */}
+            {/* Intentionally blank */}
             </Col>
 
         </Row>

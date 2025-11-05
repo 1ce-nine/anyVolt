@@ -174,6 +174,28 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }  
 
+    if (filters?.mountType) {
+    params.filters.$and.push({
+      mountType: {
+        $eq: filters.mountType,
+      },
+    });
+  }
+
+  if (filters?.hasBrake === 'true') {
+    params.filters.$and.push({
+      hasBrake: { 
+        $eq: true, // Filter for products where hasBrake is TRUE
+      },
+    });
+  } else if (filters?.hasBrake === 'false') { // <--- NEW LOGIC FOR 'No'
+    params.filters.$and.push({
+      hasBrake: { 
+        $eq: false, // Filter for products where hasBrake is FALSE
+      },
+    });
+  }
+
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;
