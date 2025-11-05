@@ -30,7 +30,10 @@ function Home() {
                             <p className="home-paragraph-small" style={{marginBottom: 0}}>Just typing anything at this stage just to get a sample.</p>
                             <p className="home-paragraph-small">Sign up today!</p>
                             <div>
-                                <Button className="ms-5 me-5 mt-2"
+                                <Button 
+                                    as={Link}
+                                    to="/signup" 
+                                    className="ms-5 me-5 mt-2"
                                     style={{
                                         backgroundColor: 'white',
                                         borderColor: 'white',

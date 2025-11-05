@@ -52,13 +52,15 @@ function Header() {
               </>
             ) : (
               <>
-                {/* FIX: route should be /login, not /loginpage */}
+                {/* Route to loginpage */}
                 <Button as={Link} to="/login" className="purple-style-button">
                   Login
                 </Button>
+                
+                {/* Route to sign up */}
                 <Button
                   as={Link}
-                  to="/signup"    // make sure you added this route + page
+                  to="/signup"    
                   style={{ backgroundColor: 'transparent', borderColor: 'white', color: 'white' }}
                 >
                   Sign up
