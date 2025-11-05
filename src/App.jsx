@@ -17,6 +17,12 @@ import FAQs from '/src/web_pages/FAQs.jsx';
 import DataSheets from '/src/web_pages/DataSheets.jsx';
 import InvestmentSummaries from '/src/web_pages/InvestmentSummaries.jsx';
 import Brochure from '/src/web_pages/Brochure.jsx';
+import OnlineWhiteboard from '/src/web_pages/OnlineWhiteboard.jsx';
+import TeamCollaboration from '/src/web_pages/TeamCollaboration.jsx';
+import CustomerService from '/src/web_pages/CustomerService.jsx';
+import PrivacyPolicy from '/src/web_pages/PrivacyPolicy.jsx';
+import Sitemap from '/src/web_pages/Sitemap.jsx';
+import Subscriptions from '/src/web_pages/Subscriptions.jsx';
 
 function App() {
   return (
@@ -44,7 +50,12 @@ function App() {
             <Route path="/datasheets" element={<DataSheets />} />
             <Route path="/investmentsummaries" element={<InvestmentSummaries />} />
             <Route path="/brochure" element={<Brochure />} />
-
+            <Route path="/onlinewhiteboard" element={<OnlineWhiteboard />} />
+            <Route path="/teamcollaboration" element={<TeamCollaboration />} />
+            <Route path="/customerservice" element={<CustomerService />} />
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/subscriptions" element={<Subscriptions />} />                                                                        
 
             {/* auth */}
             <Route path="/login" element={<LogInPage />} />

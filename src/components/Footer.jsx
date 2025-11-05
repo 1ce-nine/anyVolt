@@ -36,25 +36,34 @@ function Footer() {
               <img src={linkedinLogo} alt="linkedin logo" className="img-fluid" style={{ height: 'auto'}}/>
             </a> 
           </Col>
-          
+
+          {/* Footer links to various pages below */}
+
           <Col xs={3}>
             <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Use cases</p>
-            <p style={{color: 'white', fontSize: '11px'}}>Online whiteboard</p>
-            <p style={{color: 'white', fontSize: '11px'}}>Team collaboration</p>
+            <Link to ="/onlinewhiteboard" className="footer-link pb-5">Online Whiteboard</Link>
+            <p/>
+            <Link to ="/teamcollaboration" className="footer-link pb-5">Team Collaboration</Link>
           </Col>
+
           <Col xs={3}>
             <p style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Help</p>
             <Link to ="/faqs" className="footer-link pb-5">FAQ</Link>
-            <p></p>
-            <p style={{color: 'white', fontSize: '11px'}}>Customer Service</p>
+            <p/>
+            <Link to ="/customerservice" className="footer-link pb-5">Customer Service</Link>
+            <p/>
             <Link to="/contact" className="footer-link">Contact Us</Link> 
           </Col>
+
           <Col xs={3}>
             <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Other</p>
-            <p style={{color: 'white', fontSize: '11px'}}>Privacy Policy</p>
-            <p style={{color: 'white', fontSize: '11px'}}>Sitemap</p>
-            <p style={{color: 'white', fontSize: '11px'}}>Subscriptions</p>   
-          </Col>                              
+            <Link to ="/privacypolicy" className="footer-link pb-5">Privacy Policy</Link>
+            <p/>
+            <Link to ="/sitemap" className="footer-link pb-5">Sitemap</Link>
+            <p/>
+            <Link to="/subscriptions" className="footer-link">Subscriptions</Link> 
+          </Col>  
+                                      
         </Row>
       </Container>
     </footer>
