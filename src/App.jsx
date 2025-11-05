@@ -14,6 +14,9 @@ import LogInPage from '/src/web_pages/LoginPage.jsx';
 import ServiceCustomOrder from '/src/web_pages/ServiceCustomOrder.jsx';
 import SignupPage from '/src/web_pages/SignupPage.jsx';
 import FAQs from '/src/web_pages/FAQs.jsx';
+import DataSheets from '/src/web_pages/DataSheets.jsx';
+import InvestmentSummaries from '/src/web_pages/InvestmentSummaries.jsx';
+import Brochure from '/src/web_pages/Brochure.jsx';
 
 function App() {
   return (
@@ -38,6 +41,10 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/servicecustomorder" element={<ServiceCustomOrder />} />
             <Route path="/faqs" element={<FAQs />} />
+            <Route path="/datasheets" element={<DataSheets />} />
+            <Route path="/investmentsummaries" element={<InvestmentSummaries />} />
+            <Route path="/brochure" element={<Brochure />} />
+
 
             {/* auth */}
             <Route path="/login" element={<LogInPage />} />

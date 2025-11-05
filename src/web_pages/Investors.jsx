@@ -26,19 +26,19 @@ function Investors() {
             {/* Placeholder links to potential data points and information for potential investors. */}
             <Row className="pt-5">
               <Col className="text-center">
-              <Button variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to="/datasheets" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Data Sheets
               </Button>
               </Col>
 
               <Col className="text-center">
-              <Button variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to= "/investmentsummaries" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Investment Summaries
               </Button>
               </Col>
 
               <Col className="text-center">
-              <Button variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to="/brochure" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Brochure
               </Button>
               </Col>
