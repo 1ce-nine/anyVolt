@@ -161,6 +161,7 @@ const toPlain = (desc) => {
 
         <Col xs="auto">
           <Button
+            className="button-transparent"
             onClick={clearFilters}
             variant="outline-secondary"
             disabled={loading}
@@ -185,7 +186,14 @@ const toPlain = (desc) => {
           ) : (
             <ul style={{ listStyle: "none", padding: 0, margin: "20px 0 0 0" }}>
               {results.map((p) => (
-                <li key={p.id} style={{ background: "white", padding: '10px', borderRadius: '8px', marginBottom: '10px' }}>
+                <li key={p.id} className="filter-result-card shadow mb-3" 
+                style={{
+                  backgroundColor: 'var(--bg-color)', 
+                  listStyle: "none", 
+                  borderRadius: "8px", 
+                  padding: '10px' 
+                  }}
+                  >
                   <h5>{p.name}</h5>
                   <p>{toPlain(p.description) || "No description."}</p>
                     {p.price != null && <p><strong>${p.price}</strong></p>} 
