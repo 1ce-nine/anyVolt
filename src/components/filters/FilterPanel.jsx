@@ -94,8 +94,8 @@ const toPlain = (desc) => {
         margin: "2rem auto", 
         padding: "2rem", 
         borderRadius: "12px", 
-        background: "#f0f2f5" 
       }}
+      className="filter-panel-container mb-3"
     >
       <h4 style={{ textAlign: 'center'}}>Filter Products</h4>
       

@@ -13,11 +13,11 @@ function Sitemap() {
         <Header />
         <main>  
           <Container>
-            <h1 className="page-heading anyvolt-logo " style={{fontSize: '50px'}}>Sitemap</h1>
+            <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>Sitemap</h1>
             <Row className="mt-5">
               <Col md={10} style={{color: 'white'}}>
                 {/* Placeholder */}
-                <h3>
+                <h3 className="button-transparent">
                   Coming soon...
                 </h3>    
               </Col>

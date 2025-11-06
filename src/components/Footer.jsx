@@ -40,14 +40,14 @@ function Footer() {
           {/* Footer links to various pages below */}
 
           <Col xs={3}>
-            <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Use cases</p>
+            <p className='pb-2 button-transparent' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Use cases</p>
             <Link to ="/onlinewhiteboard" className="footer-link pb-5">Online Whiteboard</Link>
             <p/>
-            <Link to ="/teamcollaboration" className="footer-link pb-5">Team Collaboration</Link>
+            <Link to ="/teamcollaboration" className="button-transparent footer-link pb-5">Team Collaboration</Link>
           </Col>
 
           <Col xs={3}>
-            <p style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Help</p>
+            <p className="button-transparent" style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Help</p>
             <Link to ="/faqs" className="footer-link pb-5">FAQ</Link>
             <p/>
             <Link to ="/customerservice" className="footer-link pb-5">Customer Service</Link>
@@ -56,7 +56,7 @@ function Footer() {
           </Col>
 
           <Col xs={3}>
-            <p className='pb-2' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Other</p>
+            <p className='pb-2 button-transparent' style={{color: 'white', fontSize: '12px', fontWeight: "700"}}>Other</p>
             <Link to ="/privacypolicy" className="footer-link pb-5">Privacy Policy</Link>
             <p/>
             <Link to ="/sitemap" className="footer-link pb-5">Sitemap</Link>

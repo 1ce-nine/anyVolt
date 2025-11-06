@@ -15,20 +15,20 @@ function News() {
         <Header />
         <main>  
           <Container>
-            <h1 className="page-heading anyvolt-logo " style={{fontSize: '50px'}}>News</h1>
+            <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>News</h1>
             {/* Row for first news item */}
             <Row className="mt-5">
               <Col md={2}>
                 <img src={servicesPlaceholder} alt="services image" className="img-fluid me-3" style={{ height: 'auto'}}/>
               </Col>
               <Col md={10} style={{color: 'white'}}>
-                <h3>
+                <h3 className="button-transparent">
                   Headline
                 </h3>    
                 <p style={{fontSize: '12px', color: 'blue', marginBottom: 0}}>
                   Published date  
                 </p>    
-                <div style={{fontSize: '14px', marginBottom: 0}}> 
+                <div className="button-transparent" style={{fontSize: '14px', marginBottom: 0}}> 
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -50,13 +50,13 @@ function News() {
                 <img src={servicesPlaceholder} alt="services image" className="img-fluid me-3" style={{ height: 'auto'}}/>
               </Col>
               <Col md={10} style={{color: 'white'}}>
-                <h3>
+                <h3 className="button-transparent">
                   Headline
                 </h3>    
                 <p style={{fontSize: '12px', color: 'blue', marginBottom: 0}}>
                   Published date  
                 </p>    
-                <div style={{fontSize: '14px', marginBottom: 0}}> 
+                <div className="button-transparent" style={{fontSize: '14px', marginBottom: 0}}> 
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
