@@ -3,11 +3,11 @@ import { Container, Col, Row, Form, Button } from 'react-bootstrap';
 
 function AnyVoltSlogan() {
     return (
-              <Row className="align-items-start header-row">
+              <Row className="align-items-start header-row button-transparent">
                 <Col md={12}>
-                    <p className="anyvolt-logo" style={{color: 'white', fontSize: '64px', fontWeight: '700', marginBottom: 0}}>AnyVolt</p>
-                    <p className="anyvolt-logo home-paragraph" style={{marginBottom: 0}}>Empowering Every Voltage,</p>
-                    <p className="anyvolt-logo home-paragraph">Every Innovation,</p>
+                    <p className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '64px', fontWeight: '700', marginBottom: 0}}>AnyVolt</p>
+                    <p className="anyvolt-logo home-paragraph button-transparent" style={{marginBottom: 0}}>Empowering Every Voltage,</p>
+                    <p className="anyvolt-logo home-paragraph button-transparent">Every Innovation,</p>
                 </Col>
               </Row>
     )

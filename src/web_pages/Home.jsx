@@ -22,15 +22,18 @@ function Home() {
                     <Row className="align-items-center header-row">
                         {/* Displays the first paragraph on the home page */}
                         <Col md={6}>
-                            <p className="anyvolt-logo" style={{color: 'white', fontSize: '64px', fontWeight: '700', marginBottom: 0}}>AnyVolt</p>
-                            <p className="anyvolt-logo home-paragraph" style={{marginBottom: 0}}>Empowering Every Voltage,</p>
-                            <p className="anyvolt-logo home-paragraph">Every Innovation,</p>
-                            <p className="home-paragraph-small">Write something here about the company to drag in peoples attention and make them want to sign up to the company to either buy products or keep up to date with new advancements? </p>
-                            <p className="home-paragraph-small" style={{marginBottom: 0}}>Could be a little about us section to draw people in.</p>
-                            <p className="home-paragraph-small" style={{marginBottom: 0}}>Just typing anything at this stage just to get a sample.</p>
-                            <p className="home-paragraph-small">Sign up today!</p>
+                            <p className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '64px', fontWeight: '700', marginBottom: 0}}>AnyVolt</p>
+                            <p className="anyvolt-logo home-paragraph button-transparent" style={{marginBottom: 0}}>Empowering Every Voltage,</p>
+                            <p className="anyvolt-logo home-paragraph button-transparent">Every Innovation,</p>
+                            <p className="home-paragraph-small button-transparent">Write something here about the company to drag in peoples attention and make them want to sign up to the company to either buy products or keep up to date with new advancements? </p>
+                            <p className="home-paragraph-small button-transparent" style={{marginBottom: 0}}>Could be a little about us section to draw people in.</p>
+                            <p className="home-paragraph-small button-transparent" style={{marginBottom: 0}}>Just typing anything at this stage just to get a sample.</p>
+                            <p className="home-paragraph-small button-transparent">Sign up today!</p>
                             <div>
-                                <Button className="ms-5 me-5 mt-2"
+                                <Button 
+                                    as={Link}
+                                    to="/signup" 
+                                    className="ms-5 me-5 mt-2"
                                     style={{
                                         backgroundColor: 'white',
                                         borderColor: 'white',

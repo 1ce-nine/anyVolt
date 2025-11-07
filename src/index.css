@@ -14,7 +14,7 @@ html, body {
 
 
 .root-wrapper {
-  background-image: linear-gradient(to bottom, #020e53, #000000  ) ;
+  background-image: var(--main-bg); ;
   min-height: 100vh;
   position: relative;
 
@@ -72,7 +72,7 @@ html, body {
 .button-transparent {
   background-color: transparent !important;
   border: none !important;
-  color: white !important;
+  color: var(--text-color) !important; /* <--- USE VARIABLE HERE */
 }
 
 .page-heading {
@@ -99,7 +99,7 @@ html, body {
 }
 
 .footer-link {
-  color: white !important;
+  color: var(--text-color) !important; /* <--- Use the theme variable */
   text-decoration: none !important;
   font-size: 12px;
 }
@@ -146,7 +146,7 @@ html, body {
   /* Your existing styles for the white line */
   border: 0;
   height: 3px;
-  background-color: white;
+  background-color: var(--text-color);
   margin: 20px 0;
 }
 
@@ -159,11 +159,50 @@ html, body {
   border: none !important;
   box-shadow: none !important;
   /* This is the colour of the text that is inputted by the user */
-  color: white !important;
+  color: var(--text-color) !important;
 }
 
 .purple-style-button {         
   background-color: #1d006c !important;
   border: none !important;
   color: white;           
+}
+
+/* --- DARK MODE (Default) --- */
+.theme-dark {
+    --bg-color: #0d1117; /* Dark background color */
+    --text-color: #e6edf3; /* Light text color */
+    --card-bg-color: #8b8c8e; /* Slightly lighter dark card color */
+    --main-bg: linear-gradient(to bottom, #020e53, #000000);
+}
+
+/* --- LIGHT MODE --- */
+.theme-light {
+    --bg-color: #dfd9d9; /* White background color */
+    --text-color: #24292e; /* Dark text color */
+    --card-bg-color: #dcdada; /* Light card background */
+    --main-bg: var(--bg-color);
+}
+
+body {
+    color: var(--text-color);
+}
+
+
+.filter-panel-container, .filter-panel {
+    background-color: var(--card-bg-color) !important; 
+    color: var(--text-color); /* Ensure text color flips */
+}
+
+.filter-result-card {
+    /* Use the dynamic card background variable */
+    background-color: var(--card-bg-color); 
+    
+    /* Ensure all text inside the card uses the dynamic text color */
+    color: var(--text-color); 
+}
+
+/* Ensure the strong tag (price) also inherits the readable text color */
+.filter-result-card strong {
+    color: var(--text-color);
 }

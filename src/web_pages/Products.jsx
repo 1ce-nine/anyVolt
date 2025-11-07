@@ -23,7 +23,7 @@ export default function Products() {
         <Container>
           <Row className="justify-content-center">
             <Col className="text-center">
-              <h1 className="page-heading anyvolt-logo" style={{fontSize: "50px"}}>Products</h1>
+              <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: "50px"}}>Products</h1>
             </Col>
           </Row>
 

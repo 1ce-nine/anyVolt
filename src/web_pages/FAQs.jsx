@@ -11,12 +11,11 @@ function FAQs () {
         <>
             <title>FAQs</title>
                 <Header />
-                <title>FAQ</title>
                 <main>
                     <Container>
                         <Row>
                             <Col>
-                            <h1 className="page-heading anyvolt-logo " style={{fontSize: '50px'}}>FAQ</h1> 
+                            <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>FAQ</h1> 
                             {/* Create accordion from bootstrap library to provide dropdowns for FAQs. defaultActiveKey is null
                             in order to keep dropdowns closed upon opening the page*/}
                             <Accordion className="pb-1" defaultActiveKey={null}>

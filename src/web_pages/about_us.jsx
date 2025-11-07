@@ -23,7 +23,7 @@ function AboutUs() {
               
               {/* Our title row */}
               <Row>
-                <p style={{color: 'white',}}>
+                <p className="button-transparent" style={{color: 'white',}}>
                   At AnyVolt Power, we’re redefining what’s possible in electric motor technology. 
                   Specializing in AI-driven, high-performance electric motors, we design and deliver 
                   innovative energy conversion solutions for industries where power, precision, and efficiency matter most.
@@ -34,12 +34,12 @@ function AboutUs() {
               <Row className="pt-5">
                 <Col md={6}>
                   <div>
-                    <h2 className="anyvolt-logo" style={{color: 'white', fontSize: '30px'}}>Our Mission</h2>
-                    <p style={{color: 'white',}}>To deliver innovative, reliable, and versatile energy 
+                    <h2 className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '30px'}}>Our Mission</h2>
+                    <p className="button-transparent" style={{color: 'white',}}>To deliver innovative, reliable, and versatile energy 
                       conversion solutions tailored to a wide range of industries, 
                       specializing in high-performance AI-driven electric motors.
                     </p>
-                    <p style={{color: 'white',}}>
+                    <p className="button-transparent" style={{color: 'white',}}>
                       Our expertise in motor design allows us to create solutions tailored to specific needs, including power, efficiency, size, and integration requirements. We provide end-to-end development from concept to final prototype. 
                     </p>
                   </div>
@@ -56,10 +56,10 @@ function AboutUs() {
                 </Col>
                 <Col md={8}>
                   <div>
-                    <h2 className="anyvolt-logo" style={{color: 'white', fontSize: '30px'}}>Our Vision</h2>
+                    <h2 className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '30px'}}>Our Vision</h2>
                     <p style={{color: 'white',}}> To be the leading provider of cutting-edge electric motor design, setting new standards in efficiency, precision, and sustainability.
                       Core Services:
-                      <ul>
+                      <ul className="button-transparent">
                         <li>Custom high-power electric motor design and development</li>
                         <li>AI-powered predictive maintenance and real-time optimization</li>
                         <li>Electromagnetic simulation and analysis</li>

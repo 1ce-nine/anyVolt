@@ -26,19 +26,19 @@ function Investors() {
             {/* Placeholder links to potential data points and information for potential investors. */}
             <Row className="pt-5">
               <Col className="text-center">
-              <Button variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to="/datasheets" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Data Sheets
               </Button>
               </Col>
 
               <Col className="text-center">
-              <Button variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to= "/investmentsummaries" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Investment Summaries
               </Button>
               </Col>
 
               <Col className="text-center">
-              <Button variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to="/brochure" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Brochure
               </Button>
               </Col>
@@ -47,8 +47,8 @@ function Investors() {
             {/* Row by row, lists the different motor types and information about them to potential investors. */}
             <Row className="pt-5">
               <Col md={6}>
-                  <h2 className="anyvolt-logo" style={{color: 'white', fontSize: '30px'}}>Axial-Flux Motor</h2>   
-                  <div style={{color: 'white',}}>
+                  <h2 className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '30px'}}>Axial-Flux Motor</h2>   
+                  <div className="button-transparent" style={{color: 'white',}}>
                     <p>
                       Explanation:  The motor consists of one stationary stator and one rotating rotor. <br />
                       Applications: Used in automotive applications, wind turbines, and aerospace where compact and high-torque designs are needed.
@@ -80,8 +80,8 @@ function Investors() {
                   <img src={innerRotorMotor} alt="Inner Rotor Motor Image" className="img-fluid rounded-5" style={{ height: 'auto'}}/>
               </Col>
               <Col md={6}>
-                  <h2 className="anyvolt-logo" style={{color: 'white', fontSize: '30px'}}>Inner Rotor Motor</h2>   
-                  <div style={{color: 'white',}}>
+                  <h2 className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '30px'}}>Inner Rotor Motor</h2>   
+                  <div className="button-transparent" style={{color: 'white',}}>
                     <p>
                       Explanation: The rotor is inside the stator, with magnets rotating within a stationary winding. <br />
                       Applications: Drones, robotics, EVs, and industrial automation.
@@ -105,8 +105,8 @@ function Investors() {
 
             <Row className="pt-5">
               <Col md={6}>
-                  <h2 className="anyvolt-logo" style={{color: 'white', fontSize: '30px'}}>Outer Rotor Motor</h2>   
-                  <div style={{color: 'white',}}>
+                  <h2 className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '30px'}}>Outer Rotor Motor</h2>   
+                  <div className="button-transparent" style={{color: 'white',}}>
                     <p>
                       Explanation:  The rotor is external, surrounding the stator, offering increased rotational inertia. <br />
                       Applications: Electric bikes, cooling fans, conveyor belts, and drones.
@@ -136,8 +136,8 @@ function Investors() {
                   <img src={aiDrivenFeature} alt="Ai Driven Feature Image" className="img-fluid rounded-5" style={{ height: 'auto'}}/>
               </Col>
               <Col md={6}>
-                  <h2 className="anyvolt-logo" style={{color: 'white', fontSize: '30px'}}>AI-Driven Feature</h2>   
-                  <div style={{color: 'white',}}>
+                  <h2 className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '30px'}}>AI-Driven Feature</h2>   
+                  <div className="button-transparent" style={{color: 'white',}}>
                     <p>
                       Explanation: AI-driven servo controllers adapt motor performance based on real-time conditions, optimizing efficiency and precision. <br />
                       Applications: Used in robotics, CNC machines, automation, and medical devices.

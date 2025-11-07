@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import anyvoltLogo from '../assets/anyvolt_pic.webp';
 import { useAuth } from '../AuthContext';
+import ThemeToggle from '../theme/ThemeToggle';
 
 function Header() {
   const { user, logout } = useAuth();
@@ -52,17 +53,20 @@ function Header() {
               </>
             ) : (
               <>
-                {/* FIX: route should be /login, not /loginpage */}
+                {/* Route to loginpage */}
                 <Button as={Link} to="/login" className="purple-style-button">
                   Login
                 </Button>
+                
+                {/* Route to sign up */}
                 <Button
                   as={Link}
-                  to="/signup"    // make sure you added this route + page
-                  style={{ backgroundColor: 'transparent', borderColor: 'white', color: 'white' }}
+                  to="/signup"    
+                  className="button-transparent" style={{ backgroundColor: 'transparent', borderColor: 'white', color: 'white' }}
                 >
                   Sign up
                 </Button>
+                <ThemeToggle />
               </>
             )}
           </Col>

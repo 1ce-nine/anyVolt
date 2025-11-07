@@ -16,7 +16,7 @@ function Contact() {
           <Container>
             <Row className="align-items-start header-row pt-5 ps-5">
               <Col md={12}>
-                  <p className="anyvolt-logo" style={{color: 'white', fontSize: '44px', fontWeight: '700', marginBottom: 0}}>Contact Us</p>
+                  <p className="anyvolt-logo button-transparent" style={{color: 'white', fontSize: '44px', fontWeight: '700', marginBottom: 0}}>Contact Us</p>
               </Col>
             </Row>
 
@@ -56,18 +56,18 @@ function Contact() {
               </Col>
 
               <Col className="ps-5 pt-5" style={{color: "white"}}>
-                <div className="no-margin-paragraphs" >
+                <div className="no-margin-paragraphs button-transparent" >
                   <p>Better yet, see us in person!</p>
                   <p>We love our customers, so feel free to visit</p>
                   <p>during normal business hours.</p>
                 </div>
 
-                <div className="pt-5"style={{fontWeight: '700'}}>
+                <div className="pt-5 button-transparent"style={{fontWeight: '700'}}>
                   <p>AnyVolt Power</p>
                   <p>0452 648 994</p>
                 </div>
                 
-                <div className="no-margin-paragraphs">
+                <div className="no-margin-paragraphs button-transparent">
                   <p style={{fontWeight: '700'}}>Hours</p>
                   <p>Mon</p>
                   <p>9:00 am - 5:00 pm</p>

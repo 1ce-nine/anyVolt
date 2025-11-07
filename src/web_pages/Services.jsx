@@ -14,7 +14,7 @@ function Services() {
         <Header />
         <main>  
           <Container>
-            <h1 className="page-heading anyvolt-logo " style={{fontSize: '50px'}}>Services</h1>
+            <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>Services</h1>
             <Row className="mt-5">
 
               {/* Service Image */}
@@ -25,17 +25,17 @@ function Services() {
               <Col md={10} style={{color: 'white'}}>
 
                 {/* Service Title */}
-                <h3>
+                <h3 className="button-transparent">
                   Custom Product Form
                 </h3>    
 
                 {/* Service publish date */}
-                <p style={{fontSize: '12px', color: 'blue', marginBottom: 0}}>
+                <p className="button-transparent" style={{fontSize: '12px', color: 'blue', marginBottom: 0}}>
                   Published date  
                 </p> 
 
                 {/* Service Description */}   
-                <div style={{fontSize: '14px', marginBottom: 0}}> 
+                <div className="button-transparent" style={{fontSize: '14px', marginBottom: 0}}> 
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 

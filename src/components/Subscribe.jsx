@@ -6,7 +6,7 @@ function Subscribe() {
         <Container className="text-center my-5">
             <Row className="justify-content-center">
                 <Col xs={12} md={6}>
-                    <h2 className='anyvolt-logo subscribe-heading' style={{marginBottom: 5}}>Subscribe</h2>
+                    <h2 className='anyvolt-logo subscribe-heading button-transparent' style={{marginBottom: 5}}>Subscribe</h2>
                     <Form>
                         <Form.Group className="mb-1 subscribe-colour-placeholder" controlId="subscribeEmail">
                             <Form.Control className="text-center subscribe-color-placeholder" type="email" placeholder="Email"  style={{backgroundColor: 'transparent'}}/>
