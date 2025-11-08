@@ -20,6 +20,9 @@ import HasBrakeFilter from './HasBrakeFilter';
 import BrakeVoltageFilter from './BrakeVoltageFilter';
 import BrakeHoldingTorqueNm from './BrakeHoldingTorqueNmFilter';
 import GearboxRequiredFilter from './GearboxRequiredFilter';
+import GearboxTypeFilter from './GearboxTypefilter';
+import GearboxRatioFilter from './GearboxRatioFilter';
+import MaxLengthMmFilter from './MaxLengthMmFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -50,6 +53,9 @@ const toPlain = (desc) => {
     hasBrake: '',
     brakeVoltageV: '',
     brakeHoldingTorqueNm: '',
+    gearboxType: '',
+    gearboxRatio: '',
+    maxLengthMm: '',
   };
 
   const FilterPanel = () => {
@@ -165,7 +171,19 @@ const toPlain = (desc) => {
         <GearboxRequiredFilter
           value={filters.gearboxRequired}
           onChange={handleFilterChange} 
-        />                      
+        />         
+        <GearboxTypeFilter
+          value={filters.gearboxType}
+          onChange={handleFilterChange}
+        />          
+        <GearboxRatioFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />        
+        <MaxLengthMmFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />                    
       </Form>
       
       {/* 5. The Filter Button */}

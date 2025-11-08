@@ -1,29 +1,29 @@
 import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 
-// List of duty cycle options
-const DUTY_CYCLE_OPTIONS = [
+// List of gearbox options
+const GEARBOX_TYPE_OPTIONS = [
     { value: '', label: 'All Duty Cycles' },
-    { value: 'Continuous', label: 'Continuous' },
-    { value: 'Intermittent S2', label: 'Intermittent S2' },
-    { value: 'Intermittent S', label: 'Intermittent S' },
+    { value: 'Helical', label: 'Helical' },
+    { value: 'Planetary', label: 'Planetary' },
+    { value: 'Worm', label: 'Worm' },
 ];
 
-export default function DutyCycleFilter({ value, onChange }) {
+export default function GearboxTypeFilter({ value, onChange }) {
     return (
-        <Row className="mb-3 align-items-center" controlId="dutyCycle">
+        <Row className="mb-3 align-items-center" controlId="formGearboxType">
             <Col md={4}> 
-                <Form.Label>Duty Cycle:</Form.Label>
+                <Form.Label>Gearbox Type:</Form.Label>
             </Col>
             
             <Col md={8}>
                 <Form.Select 
-                    name="dutyCycle"
+                    name="gearboxType"
                     value={value} 
                     onChange={onChange}
-                    aria-label="Select Duty Cycle"
+                    aria-label="Select Gearbox Type"
                 >
-                    {DUTY_CYCLE_OPTIONS.map((option) => (
+                    {GEARBOX_TYPE_OPTIONS.map((option) => (
                         <option 
                             key={option.value} 
                             value={option.value}

@@ -174,7 +174,7 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }  
 
-    if (filters?.mountType) {
+  if (filters?.mountType) {
     params.filters.$and.push({
       mountType: {
         $eq: filters.mountType,
@@ -204,7 +204,6 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }
   
-
   if (filters?.brakeHoldingTorqueNm) {
     params.filters.$and.push({
       brakeHoldingTorqueNm: {
@@ -213,7 +212,6 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }
 
-  
   if (filters?.gearboxRequired === 'true') {
     params.filters.$and.push({
       gearboxRequired: { 
@@ -228,6 +226,29 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }
 
+  if (filters?.gearboxType) {
+    params.filters.$and.push({
+      gearboxType: {
+        $eq: filters.gearboxType,
+      },
+    });
+  }
+
+  if (filters?.gearboxRatio) {
+    params.filters.$and.push({
+      gearboxRatio: {
+        $eq: filters.gearboxRatio,
+      },
+    });
+  }
+
+  if (filters?.maxLengthMm) {
+    params.filters.$and.push({
+      maxLengthMm: {
+        $lte: filters.maxLengthMm,
+      },
+    });
+  }
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;
