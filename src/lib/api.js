@@ -249,6 +249,30 @@ export const fetchProductsByFilter = async (filters) => {
       },
     });
   }
+
+  if (filters?.maxWidthOrDiameterMm) {
+    params.filters.$and.push({
+      maxWidthOrDiameterMm: {
+        $lte: filters.maxWidthOrDiameterMm,
+      },
+    });
+  }
+
+  if (filters?.wireConnection) {
+    params.filters.$and.push({
+      wireConnection: {
+        $eq: filters.wireConnection,
+      },
+    });
+  }  
+
+  if (filters?.cooling) {
+    params.filters.$and.push({
+      cooling: {
+        $eq: filters.cooling,
+      },
+    });
+  }    
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;

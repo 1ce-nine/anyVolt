@@ -3,7 +3,7 @@ import { Form, Row, Col } from 'react-bootstrap';
 
 // List of gearbox options
 const GEARBOX_TYPE_OPTIONS = [
-    { value: '', label: 'All Duty Cycles' },
+    { value: '', label: 'All Gearbox Types' },
     { value: 'Helical', label: 'Helical' },
     { value: 'Planetary', label: 'Planetary' },
     { value: 'Worm', label: 'Worm' },

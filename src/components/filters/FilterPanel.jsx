@@ -23,6 +23,9 @@ import GearboxRequiredFilter from './GearboxRequiredFilter';
 import GearboxTypeFilter from './GearboxTypefilter';
 import GearboxRatioFilter from './GearboxRatioFilter';
 import MaxLengthMmFilter from './MaxLengthMmFilter';
+import WireConnectionFilter from './WireConnectionFilter';
+import MaxWidthOrDiameterFilter from './MaxWidthOrDiameterFilter';
+import CoolingFilter from './CoolingFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -56,6 +59,9 @@ const toPlain = (desc) => {
     gearboxType: '',
     gearboxRatio: '',
     maxLengthMm: '',
+    maxWidthOrDiameterMm: '',
+    wireConnection: '',
+    cooling: '',
   };
 
   const FilterPanel = () => {
@@ -183,7 +189,19 @@ const toPlain = (desc) => {
         <MaxLengthMmFilter
           filters={filters}
           onFilterChange={handleFilterChange}
-        />                    
+        />            
+        <MaxWidthOrDiameterFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />                  
+        <WireConnectionFilter
+          value={filters.wireConnection}
+          onChange={handleFilterChange}
+        />      
+        <CoolingFilter
+          value={filters.cooling}
+          onChange={handleFilterChange}
+        />                 
       </Form>
       
       {/* 5. The Filter Button */}
