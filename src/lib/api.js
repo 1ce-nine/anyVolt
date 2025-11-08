@@ -188,10 +188,42 @@ export const fetchProductsByFilter = async (filters) => {
         $eq: true, // Filter for products where hasBrake is TRUE
       },
     });
-  } else if (filters?.hasBrake === 'false') { // <--- NEW LOGIC FOR 'No'
+  } else if (filters?.hasBrake === 'false') { // <--- LOGIC FOR 'No'
     params.filters.$and.push({
       hasBrake: { 
         $eq: false, // Filter for products where hasBrake is FALSE
+      },
+    });
+  }
+
+  if (filters?.brakeVoltageV) {
+    params.filters.$and.push({
+      brakeVoltageV: {
+        $gte: filters.brakeVoltageV,
+      },
+    });
+  }
+  
+
+  if (filters?.brakeHoldingTorqueNm) {
+    params.filters.$and.push({
+      brakeHoldingTorqueNm: {
+        $gte: filters.brakeHoldingTorqueNm,
+      },
+    });
+  }
+
+  
+  if (filters?.gearboxRequired === 'true') {
+    params.filters.$and.push({
+      gearboxRequired: { 
+        $eq: true, // Filter for products where gearboxRequired is TRUE
+      },
+    });
+  } else if (filters?.gearboxRequired === 'false') { // <--- LOGIC FOR 'No'
+    params.filters.$and.push({
+      gearboxRequired: { 
+        $eq: false, // Filter for products where gearboxRequired is FALSE
       },
     });
   }

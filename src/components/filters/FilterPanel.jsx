@@ -17,6 +17,9 @@ import PeakCurrentFilter from './PeakCurrentFilter';
 import DutyCycleFilter from './DutyCycleFilter';
 import MountTypeFilter from './MountTypeFilter';
 import HasBrakeFilter from './HasBrakeFilter';
+import BrakeVoltageFilter from './BrakeVoltageFilter';
+import BrakeHoldingTorqueNm from './BrakeHoldingTorqueNmFilter';
+import GearboxRequiredFilter from './GearboxRequiredFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -45,6 +48,8 @@ const toPlain = (desc) => {
     dutyCycle: '',
     mountType: '',
     hasBrake: '',
+    brakeVoltageV: '',
+    brakeHoldingTorqueNm: '',
   };
 
   const FilterPanel = () => {
@@ -148,7 +153,19 @@ const toPlain = (desc) => {
         <HasBrakeFilter
           value={filters.hasBrake}
           onChange={handleFilterChange} 
-        />          
+        />         
+        <BrakeVoltageFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />         
+        <BrakeHoldingTorqueNm
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />     
+        <GearboxRequiredFilter
+          value={filters.gearboxRequired}
+          onChange={handleFilterChange} 
+        />                      
       </Form>
       
       {/* 5. The Filter Button */}
