@@ -17,6 +17,15 @@ import PeakCurrentFilter from './PeakCurrentFilter';
 import DutyCycleFilter from './DutyCycleFilter';
 import MountTypeFilter from './MountTypeFilter';
 import HasBrakeFilter from './HasBrakeFilter';
+import BrakeVoltageFilter from './BrakeVoltageFilter';
+import BrakeHoldingTorqueNm from './BrakeHoldingTorqueNmFilter';
+import GearboxRequiredFilter from './GearboxRequiredFilter';
+import GearboxTypeFilter from './GearboxTypefilter';
+import GearboxRatioFilter from './GearboxRatioFilter';
+import MaxLengthMmFilter from './MaxLengthMmFilter';
+import WireConnectionFilter from './WireConnectionFilter';
+import MaxWidthOrDiameterFilter from './MaxWidthOrDiameterFilter';
+import CoolingFilter from './CoolingFilter';
 
 // Helper function to display description text
 const toPlain = (desc) => {
@@ -45,6 +54,14 @@ const toPlain = (desc) => {
     dutyCycle: '',
     mountType: '',
     hasBrake: '',
+    brakeVoltageV: '',
+    brakeHoldingTorqueNm: '',
+    gearboxType: '',
+    gearboxRatio: '',
+    maxLengthMm: '',
+    maxWidthOrDiameterMm: '',
+    wireConnection: '',
+    cooling: '',
   };
 
   const FilterPanel = () => {
@@ -148,7 +165,43 @@ const toPlain = (desc) => {
         <HasBrakeFilter
           value={filters.hasBrake}
           onChange={handleFilterChange} 
+        />         
+        <BrakeVoltageFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />         
+        <BrakeHoldingTorqueNm
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />     
+        <GearboxRequiredFilter
+          value={filters.gearboxRequired}
+          onChange={handleFilterChange} 
+        />         
+        <GearboxTypeFilter
+          value={filters.gearboxType}
+          onChange={handleFilterChange}
         />          
+        <GearboxRatioFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />        
+        <MaxLengthMmFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />            
+        <MaxWidthOrDiameterFilter
+          filters={filters}
+          onFilterChange={handleFilterChange}
+        />                  
+        <WireConnectionFilter
+          value={filters.wireConnection}
+          onChange={handleFilterChange}
+        />      
+        <CoolingFilter
+          value={filters.cooling}
+          onChange={handleFilterChange}
+        />                 
       </Form>
       
       {/* 5. The Filter Button */}

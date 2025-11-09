@@ -174,7 +174,7 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }  
 
-    if (filters?.mountType) {
+  if (filters?.mountType) {
     params.filters.$and.push({
       mountType: {
         $eq: filters.mountType,
@@ -188,7 +188,7 @@ export const fetchProductsByFilter = async (filters) => {
         $eq: true, // Filter for products where hasBrake is TRUE
       },
     });
-  } else if (filters?.hasBrake === 'false') { // <--- NEW LOGIC FOR 'No'
+  } else if (filters?.hasBrake === 'false') { // <--- LOGIC FOR 'No'
     params.filters.$and.push({
       hasBrake: { 
         $eq: false, // Filter for products where hasBrake is FALSE
@@ -196,6 +196,83 @@ export const fetchProductsByFilter = async (filters) => {
     });
   }
 
+  if (filters?.brakeVoltageV) {
+    params.filters.$and.push({
+      brakeVoltageV: {
+        $gte: filters.brakeVoltageV,
+      },
+    });
+  }
+  
+  if (filters?.brakeHoldingTorqueNm) {
+    params.filters.$and.push({
+      brakeHoldingTorqueNm: {
+        $gte: filters.brakeHoldingTorqueNm,
+      },
+    });
+  }
+
+  if (filters?.gearboxRequired === 'true') {
+    params.filters.$and.push({
+      gearboxRequired: { 
+        $eq: true, // Filter for products where gearboxRequired is TRUE
+      },
+    });
+  } else if (filters?.gearboxRequired === 'false') { // <--- LOGIC FOR 'No'
+    params.filters.$and.push({
+      gearboxRequired: { 
+        $eq: false, // Filter for products where gearboxRequired is FALSE
+      },
+    });
+  }
+
+  if (filters?.gearboxType) {
+    params.filters.$and.push({
+      gearboxType: {
+        $eq: filters.gearboxType,
+      },
+    });
+  }
+
+  if (filters?.gearboxRatio) {
+    params.filters.$and.push({
+      gearboxRatio: {
+        $eq: filters.gearboxRatio,
+      },
+    });
+  }
+
+  if (filters?.maxLengthMm) {
+    params.filters.$and.push({
+      maxLengthMm: {
+        $lte: filters.maxLengthMm,
+      },
+    });
+  }
+
+  if (filters?.maxWidthOrDiameterMm) {
+    params.filters.$and.push({
+      maxWidthOrDiameterMm: {
+        $lte: filters.maxWidthOrDiameterMm,
+      },
+    });
+  }
+
+  if (filters?.wireConnection) {
+    params.filters.$and.push({
+      wireConnection: {
+        $eq: filters.wireConnection,
+      },
+    });
+  }  
+
+  if (filters?.cooling) {
+    params.filters.$and.push({
+      cooling: {
+        $eq: filters.cooling,
+      },
+    });
+  }    
   // If no filters were added, remove the empty $and array
   if (params.filters.$and.length === 0) {
     delete params.filters;
