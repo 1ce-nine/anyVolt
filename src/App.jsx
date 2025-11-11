@@ -4,7 +4,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './theme/ThemeContext';
 
-import AboutUs from '/src/web_pages/about_us.jsx';
+import AboutUs from '/src/web_pages/AboutUs.jsx';
 import AppContent from './AppContent.jsx';
 import Services from '/src/web_pages/Services.jsx';
 import Products from '/src/web_pages/Products.jsx';
