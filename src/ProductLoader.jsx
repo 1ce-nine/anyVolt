@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { fetchProducts } from "./lib/api";
+import { Link } from "react-router-dom";
+
 
 export default function ProductLoader() {
   const [query, setQuery] = useState("");
@@ -156,100 +158,45 @@ export default function ProductLoader() {
             </p>
           ) : (
             <ul style={{ listStyle: "none", padding: 0, margin: "1.5rem 0 0" }}> 
-              {results.map((p) => {
-                const isOpen = openId === p.id;
-                return (
-                  <li
-                    key={p.id}
+              {results.map((p) => (
+                <li
+                  key={p.id}
+                  style={{
+                    marginBottom: "0.75rem",
+                    borderRadius: "10px",
+                    background: "white",
+                    boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
+                    overflow: "hidden",
+                  }}
+                >
+                  <Link
+                    to={`/products/${p.slug}`}
                     style={{
-                      marginBottom: "0.75rem",
-                      borderRadius: "10px",
-                      background: "white",
-                      boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
-                      overflow: "hidden",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                      padding: "0.9rem 1rem",
+                      textDecoration: "none",
+                      color: "inherit",
                     }}
                   >
-                    {/* Row header: thumbnail + name + chevron */}
-                    <button
-                      onClick={() => setOpenId(isOpen ? null : p.id)}
-                      aria-expanded={isOpen}
-                      style={{
-                        width: "100%",
-                        padding: "0.9rem 1rem",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "12px",
-                        border: "none",
-                        background: "white",
-                        cursor: "pointer",
-                        textAlign: "left",
-                      }}
-                    >
-                      {p.thumbnailUrl && (
-                        <img
-                          src={p.thumbnailUrl}
-                          alt={p.name}
-                          width={48}
-                          height={48}
-                          style={{ objectFit: "cover", borderRadius: "8px", flexShrink: 0 }}
-                          onError={(e) => (e.currentTarget.style.display = "none")}
-                        />
-                      )}
-                      <span style={{ fontSize: "1.05rem", fontWeight: 600, flex: 1 }}>
-                        {p.name}
-                      </span>
-                      <span
-                        style={{
-                          transform: `rotate(${isOpen ? 90 : 0}deg)`,
-                          transition: "transform 0.15s ease",
-                          color: "#888",
-                          fontWeight: 700,
-                          fontSize: "1rem",
-                        }}
-                      >
-                        ›
-                      </span>
-                    </button>
-
-                    {/* Expanding panel: description + price ONLY (no big image) */}
-                    <div
-                      style={{
-                        maxHeight: isOpen ? "300px" : "0px",
-                        overflow: "hidden",
-                        transition: "max-height 220ms ease",
-                        borderTop: "1px solid #f0f0f0",
-                        background: "#fff",
-                      }}
-                    >
-                      <div style={{ padding: isOpen ? "0.9rem 1rem 1rem" : "0 1rem" }}>
-                        <p style={{ margin: 0, color: "#444", lineHeight: 1.7 }}>
-                          {toPlain(p.description) || "No description available."}
-                        </p>
-                        {p.price != null && (
-                          <p style={{ margin: "0.5rem 0 0", color: "#111", fontWeight: 600 }}>
-                            ${p.price}
-                          </p>
-                        )}
-                        {p.voltage != null && (
-                          <p style={{ margin: "0.5rem 0 0", color: "#555", fontWeight: 500 }}>
-                            Voltage: {p.voltage} kV
-                          </p>
-                        )}
-                        {p.ipRating != null && (
-                          <p style={{ margin: "0.5rem 0 0", color: "#555", fontWeight: 500 }}>
-                            IP Rating: {p.ipRating}
-                          </p>
-                        )}             
-                        {p.frameSizelec != null && (
-                          <p style={{ margin: "0.5rem 0 0", color: "#555", fontWeight: 500 }}>
-                            Frame Size: {p.frameSizelec}
-                          </p>
-                        )}                                       
-                      </div>
-                    </div>
-                  </li>
-                );
-              })}
+                    {p.thumbnailUrl && (
+                      <img
+                        src={p.thumbnailUrl}
+                        alt={p.name}
+                        width={48}
+                        height={48}
+                        style={{ objectFit: "cover", borderRadius: "8px", flexShrink: 0 }}
+                        onError={(e) => (e.currentTarget.style.display = "none")}
+                      />
+                    )}
+                    <span style={{ fontSize: "1.05rem", fontWeight: 600, flex: 1 }}>
+                      {p.name}
+                    </span>
+                    <span style={{ color: "#007bff", fontWeight: 600 }}>View →</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           )}
         </>

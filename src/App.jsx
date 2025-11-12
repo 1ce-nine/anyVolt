@@ -4,7 +4,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './theme/ThemeContext';
 
-import AboutUs from '/src/web_pages/about_us.jsx';
+import AboutUs from '/src/web_pages/AboutUs.jsx';
 import AppContent from './AppContent.jsx';
 import Services from '/src/web_pages/Services.jsx';
 import Products from '/src/web_pages/Products.jsx';
@@ -24,6 +24,8 @@ import CustomerService from '/src/web_pages/CustomerService.jsx';
 import PrivacyPolicy from '/src/web_pages/PrivacyPolicy.jsx';
 import Sitemap from '/src/web_pages/Sitemap.jsx';
 import Subscriptions from '/src/web_pages/Subscriptions.jsx';
+import SingleProductDisplay from './SingleProductDisplay.jsx';
+
 
 
 function App() {
@@ -46,6 +48,7 @@ function App() {
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/services" element={<Services />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/products/:slug" element={<SingleProductDisplay />} />
               <Route path="/investors" element={<Investors />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/news" element={<News />} />
