@@ -25,14 +25,13 @@ import PrivacyPolicy from '/src/web_pages/PrivacyPolicy.jsx';
 import Sitemap from '/src/web_pages/Sitemap.jsx';
 import Subscriptions from '/src/web_pages/Subscriptions.jsx';
 import SingleProductDisplay from './SingleProductDisplay.jsx';
-
+import ChatWidget from "./components/ChatWidget";
+import "./components/ChatWidget.css";
 
 
 function App() {
   return (
-    // Wraps the entire block in the ThemeProvider
     <ThemeProvider>
-      {/* // CSS wrapping for main pages so that orbs show in background of all pages */}
       <div className="root-wrapper">
         <div className="orb orb-purple"></div>
         <div className="orb orb-aqua-1"></div>
@@ -40,7 +39,6 @@ function App() {
         <div className="orb orb-dark-1"></div>
 
         <div className="app-wrapper">
-          {/* Provide path routing between pages through BroswerRouter component*/}
           <BrowserRouter>
             <Routes>
               {/* public pages */}
@@ -62,13 +60,13 @@ function App() {
               <Route path="/customerservice" element={<CustomerService />} />
               <Route path="/privacypolicy" element={<PrivacyPolicy />} />
               <Route path="/sitemap" element={<Sitemap />} />
-              <Route path="/subscriptions" element={<Subscriptions />} />                                                                        
+              <Route path="/subscriptions" element={<Subscriptions />} />
 
               {/* auth */}
               <Route path="/login" element={<LogInPage />} />
               <Route path="/signup" element={<SignupPage />} />
 
-              {/* legacy redirect: /loginpage -> /login */}
+              {/* legacy redirect */}
               <Route path="/loginpage" element={<Navigate to="/login" replace />} />
 
               {/* catch-all */}
@@ -77,6 +75,9 @@ function App() {
           </BrowserRouter>
         </div>
       </div>
+
+      {/* 🔹 Floating chat widget (global) */}
+      <ChatWidget productId={1} />
     </ThemeProvider>
   );
 }
