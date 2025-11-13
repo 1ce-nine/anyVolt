@@ -31,6 +31,8 @@ import { CartProvider } from './shopping_cart/CartContext.jsx';
 import CartPage from './shopping_cart/CartPage.jsx';
 
 
+
+
 function App() {
   return (
     <ThemeProvider>

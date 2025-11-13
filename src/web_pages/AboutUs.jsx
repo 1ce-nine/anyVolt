@@ -8,7 +8,7 @@ import AnyVoltSlogan from '/src/components/AnyVoltSlogan';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import aboutUsImage1 from '/src/assets/about-us-img-1.png';
 import aboutUsImage2 from '/src/assets/about-us-img-2.png';
-import Subscribe from '/src/components/Subscribe';
+
 
 
 
@@ -71,7 +71,7 @@ function AboutUs() {
                 </Col>
               </Row>
             </Container>      
-            <Subscribe />         
+                 
           </main>
         <Footer />
     </>
