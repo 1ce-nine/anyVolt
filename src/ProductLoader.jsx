@@ -33,7 +33,7 @@ export default function ProductLoader() {
     }
   };
 
-  // NEW HANDLER: Resets all search states
+  // Resets all search states
   const clearSearch = () => {
     setQuery("");
     setResults([]);
@@ -193,7 +193,7 @@ export default function ProductLoader() {
                     <span style={{ fontSize: "1.05rem", fontWeight: 600, flex: 1 }}>
                       {p.name}
                     </span>
-                    <span style={{ color: "#007bff", fontWeight: 600 }}>View →</span>
+                    <span style={{ color: "#001b38ff", fontWeight: 600 }}>View →</span>
                   </Link>
                 </li>
               ))}

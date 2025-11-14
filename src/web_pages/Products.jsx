@@ -59,7 +59,7 @@ export default function Products() {
             </Col>
           </Row>           
 
-            {/* 1b. ProductLoader (Search Input + Search Button) (Now on the RIGHT) */}
+            {/* 1b. ProductLoader (Search Input + Search Button) */}
           <Row className="justify-content-center mb-4 align-items-center">
             <Col xs={9} sm={8} md={6} lg={5} className="p-0">
                 {/* ProductLoader renders your main search input and button */}

@@ -1,6 +1,7 @@
 // src/components/filters/FilterPanel.jsx
 import React, { useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 // Import the specific API function needed
 import { fetchProductsByFilter } from '../../lib/api'; 
 
@@ -241,12 +242,13 @@ const toPlain = (desc) => {
               {results.map((p) => (
                 <li key={p.id} className="filter-result-card shadow mb-3" 
                 style={{
-                  backgroundColor: 'var(--bg-color)', 
-                  listStyle: "none", 
-                  borderRadius: "8px", 
-                  padding: '10px' 
-                  }}
-                  >
+                  padding: '10px', 
+                  borderRadius: '8px',
+                  backgroundColor: 'var(--bg-color)' }}>
+                <Link
+                  to={`/products/${p.slug}`} // <-- Uses the product slug
+                        style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+                        >
                   <h5>{p.name}</h5>
                   <p>{toPlain(p.description) || "No description."}</p>
                     {p.price != null && <p><strong>${p.price}</strong></p>} 
@@ -268,6 +270,7 @@ const toPlain = (desc) => {
                         )}                                           
                       </p>
                     )}
+                    </Link>
                 </li>
               ))}
             </ul>

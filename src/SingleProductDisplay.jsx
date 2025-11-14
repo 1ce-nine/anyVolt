@@ -37,7 +37,7 @@ export default function SingleProductDisplay() {
   if (err) return <p style={{ color: "red", padding: "1rem" }}>{err}</p>;
   if (!product) return <p style={{ padding: "1rem" }}>Loading product...</p>;
 
-  const { id, name, price, description, voltage, supplyVoltageMinV, supplyVoltageMaxV } = product;
+  const { id, name, price, description, voltage, supplyVoltageMinV, supplyVoltageMaxV, motorType } = product;
 
   return (
     <>
@@ -57,7 +57,7 @@ export default function SingleProductDisplay() {
               <li>Voltage: {voltage || "N/A"}</li>
               <li>Minimum Voltage: {supplyVoltageMinV || "N/A"}</li>
               <li>Maximum Voltage: {supplyVoltageMaxV || "N/A"}</li>
-            </ul>
+              <li>Motor Type: {motorType || "N/A"}</li>            </ul>
           </Col>
         </Row>
 
