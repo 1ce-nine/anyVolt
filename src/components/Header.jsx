@@ -42,33 +42,9 @@ function Header() {
             <Button as={Link} to="/news" className="button-transparent">News</Button>
           </Col>
 
-          {/* USER + CART + THEME TOGGLE */}
           <Col xs={3} className="d-flex justify-content-end header-buttons" style={{ gap: '0.5rem' }}>
 
-            {/* ALWAYS SHOW CART ICON */}
-            <Link 
-              to="/cart" 
-              style={{ position: "relative", display: "inline-block", fontSize: "1.6rem", marginRight: "1rem" }}
-            >
-              🛒
-              {cart.length > 0 && (
-                <span
-                  style={{
-                    position: "absolute",
-                    top: "-5px",
-                    right: "-10px",
-                    background: "red",
-                    color: "white",
-                    borderRadius: "50%",
-                    padding: "2px 6px",
-                    fontSize: "0.75rem",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {cart.length}
-                </span>
-              )}
-            </Link>
+
 
             {/* SHOW LOGIN/LOGOUT CONDITIONALS */}
             {user ? (
@@ -104,6 +80,29 @@ function Header() {
                 </Button>
               </>
             )}
+            <Link 
+              to="/cart" 
+              style={{ position: "relative", display: "inline-block", fontSize: "1.6rem", marginRight: "1rem" }}
+            >
+              🛒
+              {cart.length > 0 && (
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "-5px",
+                    right: "-10px",
+                    background: "red",
+                    color: "white",
+                    borderRadius: "50%",
+                    padding: "2px 6px",
+                    fontSize: "0.75rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {cart.length}
+                </span>
+              )}
+            </Link>            
 
             {/* THEME TOGGLE */}
             <ThemeToggle />

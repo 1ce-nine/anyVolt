@@ -1,6 +1,7 @@
 import { useCart } from "../shopping_cart/CartContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Col, Row, Container} from "react-bootstrap"
 
 export default function CartPage() {
   const { cart, removeFromCart } = useCart();
@@ -8,9 +9,10 @@ export default function CartPage() {
   return (
     <>
       <Header />
-      <div style={{ padding: "2rem" }} className="button-transparent">
-        <h1>Your Cart</h1>
-
+      <Container className="button-transparent">
+        <Row>
+          <h1>Your Cart</h1>
+        </Row>
         {cart.length === 0 && <p>Your cart is empty.</p>}
 
         {cart.map((item) => (
@@ -43,10 +45,11 @@ export default function CartPage() {
               >
                 Remove
               </button>
-            </div>
+            </div>         
           </div>
         ))}
-      </div>
+        <p>Total: ${cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)}</p>
+        </Container>
       <Footer />
     </>
   );
