@@ -27,57 +27,61 @@ import Subscriptions from '/src/web_pages/Subscriptions.jsx';
 import SingleProductDisplay from './SingleProductDisplay.jsx';
 import ChatWidget from "./components/ChatWidget";
 import "./components/ChatWidget.css";
+import { CartProvider } from './shopping_cart/CartContext.jsx';
+import CartPage from './shopping_cart/CartPage.jsx';
 
 
 function App() {
   return (
     <ThemeProvider>
-      <div className="root-wrapper">
-        <div className="orb orb-purple"></div>
-        <div className="orb orb-aqua-1"></div>
-        <div className="orb orb-aqua-2"></div>
-        <div className="orb orb-dark-1"></div>
+      <CartProvider>
+        <div className="root-wrapper">
+          <div className="orb orb-purple"></div>
+          <div className="orb orb-aqua-1"></div>
+          <div className="orb orb-aqua-2"></div>
+          <div className="orb orb-dark-1"></div>
+          <div className="app-wrapper">
+            <BrowserRouter>
+              <Routes>
+                {/* public pages */}
+                <Route path="/" element={<AppContent />} />
+                <Route path="/about-us" element={<AboutUs />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/products/:slug" element={<SingleProductDisplay />} />
+                <Route path="/investors" element={<Investors />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/servicecustomorder" element={<ServiceCustomOrder />} />
+                <Route path="/faqs" element={<FAQs />} />
+                <Route path="/datasheets" element={<DataSheets />} />
+                <Route path="/investmentsummaries" element={<InvestmentSummaries />} />
+                <Route path="/brochure" element={<Brochure />} />
+                <Route path="/onlinewhiteboard" element={<OnlineWhiteboard />} />
+                <Route path="/teamcollaboration" element={<TeamCollaboration />} />
+                <Route path="/customerservice" element={<CustomerService />} />
+                <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+                <Route path="/sitemap" element={<Sitemap />} />
+                <Route path="/subscriptions" element={<Subscriptions />} />
+                <Route path="/cart" element={<CartPage />} />
 
-        <div className="app-wrapper">
-          <BrowserRouter>
-            <Routes>
-              {/* public pages */}
-              <Route path="/" element={<AppContent />} />
-              <Route path="/about-us" element={<AboutUs />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:slug" element={<SingleProductDisplay />} />
-              <Route path="/investors" element={<Investors />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/servicecustomorder" element={<ServiceCustomOrder />} />
-              <Route path="/faqs" element={<FAQs />} />
-              <Route path="/datasheets" element={<DataSheets />} />
-              <Route path="/investmentsummaries" element={<InvestmentSummaries />} />
-              <Route path="/brochure" element={<Brochure />} />
-              <Route path="/onlinewhiteboard" element={<OnlineWhiteboard />} />
-              <Route path="/teamcollaboration" element={<TeamCollaboration />} />
-              <Route path="/customerservice" element={<CustomerService />} />
-              <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-              <Route path="/sitemap" element={<Sitemap />} />
-              <Route path="/subscriptions" element={<Subscriptions />} />
+                {/* auth */}
+                <Route path="/login" element={<LogInPage />} />
+                <Route path="/signup" element={<SignupPage />} />
 
-              {/* auth */}
-              <Route path="/login" element={<LogInPage />} />
-              <Route path="/signup" element={<SignupPage />} />
+                {/* legacy redirect */}
+                <Route path="/loginpage" element={<Navigate to="/login" replace />} />
 
-              {/* legacy redirect */}
-              <Route path="/loginpage" element={<Navigate to="/login" replace />} />
-
-              {/* catch-all */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </BrowserRouter>
+                {/* catch-all */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
         </div>
-      </div>
 
-      {/* 🔹 Floating chat widget (global) */}
-      <ChatWidget productId={1} />
+        {/* 🔹 Floating chat widget (global) */}
+        <ChatWidget productId={1} />
+      </CartProvider>
     </ThemeProvider>
   );
 }
