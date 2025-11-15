@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-
+import { useCart } from "./shopping_cart/CartContext";
 
 export default function SingleProductDisplay() {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
   const [err, setErr] = useState("");
+  const { addToCart } = useCart();
 
   useEffect(() => {
     if (!slug) return;
@@ -19,71 +20,64 @@ export default function SingleProductDisplay() {
 
     axios.get(url)
       .then(r => {
-        console.log("Fetched product:", r.data); // 🔍 check console
+        console.log("API response:", r.data); // check in console
         const item = r.data?.data?.[0];
-        if (!item) throw new Error("Product not found");
+        if (!item) {
+          setErr("Product not found");
+          return;
+        }
         setProduct(item);
       })
-      .catch(e => setErr(e.message || "Fetch failed"));
+      .catch(e => {
+        console.error(e);
+        setErr(e.message || "Fetch failed");
+      });
   }, [slug]);
 
-  if (err) return <p style={{ color: "red" }}>Could not fetch the product: {err}</p>;
-  if (!product) return <p>Loading…</p>;
+  if (err) return <p style={{ color: "red", padding: "1rem" }}>{err}</p>;
+  if (!product) return <p style={{ padding: "1rem" }}>Loading product...</p>;
 
-  const { attributes } = product;
-  let imageUrl = null;
+  const { id, name, price, description, voltage, supplyVoltageMinV, supplyVoltageMaxV, motorType } = product;
 
-  // case 1: simple string
-  if (typeof product.image === "string") {
-    imageUrl = product.image;
-  }
+  return (
+    <>
+      <Header />
+      <Container>
+        <Row className="justify-content-center">
+          <Col className="text-center">
+            <h1 className="anyvolt-logo button-transparent">{name || "Unknown Product"}</h1>
+          </Col>
+        </Row>
 
-  // case 2: nested Strapi object
-  else if (product.image?.data?.attributes?.url) {
-    const base = import.meta.env.VITE_API_URL;
-    imageUrl = `${base}${product.image.data.attributes.url}`;
-  }
-return (
-  <>
-  <Header />
-  <Container>
-    <Row className="justify-content-center">
-      <Col className="text-center">
-        <h1 className="anyvolt-logo button-transparent">
-          {product.name || "Unknown" }
-        </h1>
-      </Col>
-    </Row>
-    <Row>
-      <Col md={6}>
-        <h3 className="button-transparent">Specifications</h3>
-        <ul className="button-transparent">
-          <li>Description: {product.description}</li>
-          <li>Voltage: {product.voltage}</li>
-          <li>Minimum Voltage: {product.supplyVoltageMinV}</li>
-          <li>Maximum Voltage: {product.supplyVoltageMaxV}</li>
+        <Row>
+          <Col md={6}>
+            <h3 className="button-transparent">Specifications</h3>
+            <ul className="button-transparent">
+              <li>Description: {description || "N/A"}</li>
+              <li>Voltage: {voltage || "N/A"}</li>
+              <li>Minimum Voltage: {supplyVoltageMinV || "N/A"}</li>
+              <li>Maximum Voltage: {supplyVoltageMaxV || "N/A"}</li>
+              <li>Motor Type: {motorType || "N/A"}</li>            </ul>
+          </Col>
+        </Row>
 
-        </ul>
-      </Col>
-      <Col md={6}>
-        {imageUrl && (
-          <img
-            src={imageUrl}
-            alt={product.name}
-            style={{
-              width: "100%",
-              maxWidth: "600px",
-              borderRadius: "12px",
-              margin: "1.5rem auto",
-              display: "block",
-              objectFit: "cover",
-            }}
-          />
-        )}
-      </Col>
-    </Row>
-  </Container>
-  <Footer />
-  </>
-);
+        <Row className="mt-3">
+          <Col md={6}>
+            <Button
+              variant="primary"
+              className="purple-style-button"
+              onClick={() => addToCart({
+                id,
+                name: name || "Unknown",
+                price: price || 0,
+              })}
+            >
+              Add to Cart
+            </Button>
+          </Col>
+        </Row>
+      </Container>
+      <Footer />
+    </>
+  );
 }
