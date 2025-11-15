@@ -15,6 +15,8 @@ import cameraImage from '/src/assets/camera_image.png';
 // ❌ remove old Subscribe import
 // import Subscribe from '/src/components/Subscribe';
 import NewsletterSubscribe from '../components/NewsletterSubscribe';
+import VideoCarousel from "../components/VideoCarousel";
+
 
 function Home() {
   return (
@@ -157,53 +159,11 @@ function Home() {
 
           {/* Placeholder video blocks */}
           <Row className="pt-5">
-            <Col md={6} xs={6} className="text-center">
-              <div
-                className="img-fluid"
-                style={{
-                  backgroundColor: '#cdcacaff',
-                  width: '600px',
-                  height: '350px',
-                  display: 'inline-flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginBottom: '10px',
-                  borderRadius: '8px',
-                }}
-              >
-                <img
-                  src={cameraImage}
-                  alt="camera-image-1"
-                  className="img-fluid"
-                  style={{ height: 'auto' }}
-                />
-              </div>
-            </Col>
-
-            <Col md={6} xs={6} className="text-center">
-              <div
-                className="img-fluid"
-                style={{
-                  backgroundColor: '#cdcacaff',
-                  width: '600px',
-                  height: '350px',
-                  display: 'inline-flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginBottom: '10px',
-                  borderRadius: '8px',
-                }}
-              >
-                <img
-                  src={cameraImage}
-                  alt="camera-image-2"
-                  className="img-fluid"
-                  style={{ height: 'auto' }}
-                />
-              </div>
+            <Col className="d-flex justify-content-center">
+              <VideoCarousel />
             </Col>
           </Row>
-
+          
           {/* ✅ Newsletter subscribe section */}
           <Row className="pt-5 pb-5">
             <Col md={{ span: 8, offset: 2 }} className="text-center">

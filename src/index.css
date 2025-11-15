@@ -206,3 +206,124 @@ body {
 .filter-result-card strong {
     color: var(--text-color);
 }
+
+.video-fade {
+  animation: videoFadeIn 0.4s ease;
+}
+
+@keyframes videoFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ===========================
+   VIDEO CAROUSEL STYLING
+   =========================== */
+
+.video-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1050px;   /* wider layout for bigger screens */
+  width: 100%;
+  margin: 0 auto;
+  gap: 40px;           /* space between arrows + video frame */
+}
+
+/* The video frame */
+.video-frame {
+  background-color: transparent;   /* 🔹 no grey behind the video */
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* make sure the iframe fills the frame with no padding/margins */
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Arrows (outside the frame) */
+.video-arrow {
+  font-size: 4rem;                /* large + readable */
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.95);
+  transition: 0.2s ease;
+}
+
+.video-arrow:hover {
+  text-shadow: 0 0 18px rgba(255, 255, 255, 1);
+}
+
+/* Positioning */
+.video-arrow.left {
+  margin-right: -5px;
+}
+
+.video-arrow.right {
+  margin-left: -5px;
+}
+
+/* Loading/empty states */
+.video-frame.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cdcacaff;
+  color: #333;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+/* ===========================
+   RESPONSIVE TWEAKS
+   =========================== */
+
+/* Medium screens (tablet) */
+@media (max-width: 900px) {
+  .video-wrapper {
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .video-arrow {
+    font-size: 3rem;
+  }
+
+  .video-frame {
+    max-width: 100%;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  .video-wrapper {
+    gap: 10px;
+  }
+
+  .video-arrow {
+    font-size: 2.4rem;
+  }
+
+  .video-frame {
+    max-width: 100%;
+  }
+}
