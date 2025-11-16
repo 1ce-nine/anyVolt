@@ -53,11 +53,13 @@ export default function SingleProductDisplay() {
           <Col md={6}>
             <h3 className="button-transparent">Specifications</h3>
             <ul className="button-transparent">
+              <li>Price: ${price.toFixed(2) || "N/A"}</li>
               <li>Description: {description || "N/A"}</li>
               <li>Voltage: {voltage || "N/A"}</li>
               <li>Minimum Voltage: {supplyVoltageMinV || "N/A"}</li>
               <li>Maximum Voltage: {supplyVoltageMaxV || "N/A"}</li>
-              <li>Motor Type: {motorType || "N/A"}</li>            </ul>
+              <li>Motor Type: {motorType || "N/A"}</li>            
+            </ul>
           </Col>
         </Row>
 
