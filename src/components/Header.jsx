@@ -33,7 +33,7 @@ function Header() {
           </Col>
 
           {/* NAV BUTTONS */}
-          <Col xs={7}>
+          <Col xs={6}>
             <Button as={Link} to="/about-us" className="button-transparent">About Us</Button>
             <Button as={Link} to="/services" className="button-transparent">Services</Button>
             <Button as={Link} to="/products" className="button-transparent">Products</Button>
@@ -42,7 +42,7 @@ function Header() {
             <Button as={Link} to="/news" className="button-transparent">News</Button>
           </Col>
 
-          <Col xs={3} className="d-flex justify-content-end header-buttons" style={{ gap: '0.5rem' }}>
+          <Col xs={4} className="d-flex justify-content-end header-buttons" style={{ gap: '0.5rem' }}>
 
 
 
