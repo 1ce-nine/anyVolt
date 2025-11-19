@@ -49,6 +49,13 @@ export default function CartPage() {
           </div>
         ))}
         <p>Total: ${cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)}</p>
+        <Row className="justify-content-center">
+          <Col xs="auto">
+            <button style={{fontSize: "20px"}} className="purple-style-button">
+              Proceed to Secure Payment
+            </button>
+          </Col>
+        </Row>
         </Container>
       <Footer />
     </>
