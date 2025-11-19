@@ -7,6 +7,7 @@ import Footer from "/src/components/Footer";
 import { Container, Row, Col, Button, Form, Alert } from "react-bootstrap";
 import anyvoltLogo from "/src/assets/anyvolt_pic.webp";
 import { useAuth } from "../AuthContext";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export default function SignupPage() {
   {/* Retrieve signup function from AuthContext*/}
@@ -64,6 +65,7 @@ export default function SignupPage() {
       <Header />
       <main>
         <Container>
+        <Breadcrumbs labels={{ "signup": "Sign up" }} />
           <Row className="justify-content-center pt-5">
             <Col xs={10} sm={8} md={6} lg={4}>
               <img src={anyvoltLogo} alt="Anyvolt Logo" style={{ width: "100%", height: "auto" }} />

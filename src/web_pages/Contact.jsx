@@ -5,6 +5,7 @@ import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import axios from "axios";
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 // Adjust this to match your setup (same as elsewhere in your app)
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:1337";
@@ -78,7 +79,9 @@ function Contact() {
       <Header />
       <main>
         <Container>
-          <Row className="align-items-start header-row pt-5 ps-5">
+        <Breadcrumbs labels={{ "contact": "Contact Us" }} />
+          
+          <Row className="align-items-start header-row ps-5">
             <Col md={12}>
               <p
                 className="anyvolt-logo button-transparent"

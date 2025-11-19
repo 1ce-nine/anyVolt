@@ -6,6 +6,8 @@ import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import servicesPlaceholder from '/src/assets/services-placeholder-image.png';
+import Breadcrumbs from "../components/Breadcrumbs";
+
 
 function Services() {
   return (
@@ -14,6 +16,7 @@ function Services() {
         <Header />
         <main>  
           <Container>
+            <Breadcrumbs labels={{ "services": "Services" }} />
             <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>Services</h1>
             <Row className="mt-5">
 
@@ -47,7 +50,7 @@ function Services() {
                 </div>
 
                 {/* Provide link to ServiceCustomerForm so that the client can fill it out */}
-                <Button as={Link}to="/servicecustomorder" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+                <Button as={Link} to="/services/customer-order" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                   Click Here
                 </Button>
               </Col>

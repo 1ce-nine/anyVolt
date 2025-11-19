@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 function FAQs () {
     return (
@@ -13,6 +14,7 @@ function FAQs () {
                 <Header />
                 <main>
                     <Container>
+                    <Breadcrumbs labels={{ "faqs": "Frequently Asked Questions" }} />                        
                         <Row>
                             <Col>
                             <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>FAQ</h1> 

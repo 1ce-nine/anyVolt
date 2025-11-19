@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 function Sitemap() {
   return (
@@ -13,6 +14,7 @@ function Sitemap() {
         <Header />
         <main>  
           <Container>
+          <Breadcrumbs labels={{ "sitemap": "Sitemap" }} />
             <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>Sitemap</h1>
             <Row className="mt-5">
               <Col md={10} style={{color: 'white'}}>

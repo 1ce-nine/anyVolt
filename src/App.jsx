@@ -47,18 +47,18 @@ function App() {
               <Routes>
                 {/* public pages */}
                 <Route path="/" element={<AppContent />} />
-                <Route path="/about-us" element={<AboutUs />} />
+                <Route path="/about-us" element={<AboutUs />} handle={{ breadcrumb: "About Us" }} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/products/:slug" element={<SingleProductDisplay />} />
                 <Route path="/investors" element={<Investors />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/news" element={<News />} />
-                <Route path="/servicecustomorder" element={<ServiceCustomOrder />} />
+                <Route path="/services/customer-order" element={<ServiceCustomOrder />} />
                 <Route path="/faqs" element={<FAQs />} />
-                <Route path="/datasheets" element={<DataSheets />} />
-                <Route path="/investmentsummaries" element={<InvestmentSummaries />} />
-                <Route path="/brochure" element={<Brochure />} />
+                <Route path="/investors/datasheets" element={<DataSheets />} />
+                <Route path="/investors/investmentsummaries" element={<InvestmentSummaries />} />
+                <Route path="/investors/brochure" element={<Brochure />} />
                 <Route path="/onlinewhiteboard" element={<OnlineWhiteboard />} />
                 <Route path="/teamcollaboration" element={<TeamCollaboration />} />
                 <Route path="/customerservice" element={<CustomerService />} />

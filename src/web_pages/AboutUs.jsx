@@ -8,6 +8,7 @@ import AnyVoltSlogan from '/src/components/AnyVoltSlogan';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import aboutUsImage1 from '/src/assets/about-us-img-1.png';
 import aboutUsImage2 from '/src/assets/about-us-img-2.png';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 
 
@@ -16,9 +17,10 @@ function AboutUs() {
   return (
     <>
       <title>About Us</title>
-        <Header />
+        <Header />        
           <main>
             <Container>
+            <Breadcrumbs labels={{ "about-us": "About Us" }} />
               <AnyVoltSlogan />   
               
               {/* Our title row */}

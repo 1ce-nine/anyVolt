@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 function InvestmentSummaries() {
   return (
@@ -13,6 +14,10 @@ function InvestmentSummaries() {
         <Header />
         <main>  
           <Container>
+          <Breadcrumbs labels={{
+          investors: "Investors",
+          "investmentsummaries": "Investment Summaries"
+          }} />            
             <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>Investment Summaries</h1>
             <Row className="mt-5">
               <Col md={10} style={{color: 'white'}}>

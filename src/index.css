@@ -327,3 +327,20 @@ body {
     max-width: 100%;
   }
 }
+
+.breadcrumbs {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.breadcrumbs a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

@@ -6,6 +6,7 @@ import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import servicesPlaceholder from '/src/assets/services-placeholder-image.png';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 
 function News() {
@@ -15,6 +16,7 @@ function News() {
         <Header />
         <main>  
           <Container>
+          <Breadcrumbs labels={{ "news": "News" }} />
             <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>News</h1>
             {/* Row for first news item */}
             <Row className="mt-5">

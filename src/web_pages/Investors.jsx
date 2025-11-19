@@ -10,6 +10,7 @@ import axialFluxMotor from "/src/assets/axial_flux_motor_img.png";
 import innerRotorMotor from "/src/assets/inner_rotor_motor_img.png";
 import outerRotorMotor from "/src/assets/outer_rotor_motor_img.png";
 import aiDrivenFeature from "/src/assets/ai_driven_feature_img.png";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 
 
@@ -21,24 +22,25 @@ function Investors() {
         <Header />
         <main>
           <Container>
+          <Breadcrumbs labels={{ "investors": "Investors" }} />
             <AnyVoltSlogan />
 
             {/* Placeholder links to potential data points and information for potential investors. */}
             <Row className="pt-5">
               <Col className="text-center">
-              <Button as={Link}to="/datasheets" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to="/investors/datasheets" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Data Sheets
               </Button>
               </Col>
 
               <Col className="text-center">
-              <Button as={Link}to= "/investmentsummaries" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to= "/investors/investmentsummaries" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Investment Summaries
               </Button>
               </Col>
 
               <Col className="text-center">
-              <Button as={Link}to="/brochure" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
+              <Button as={Link}to="/investors/brochure" variant="primary" type="submit" className="purple-style-button" style={{marginTop: -5}}>              
                 Brochure
               </Button>
               </Col>

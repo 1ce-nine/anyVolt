@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
+
 
 function CustomerService() {
   return (
@@ -13,6 +15,7 @@ function CustomerService() {
         <Header />
         <main>  
           <Container>
+          <Breadcrumbs labels={{ "customerservice": "Customer Service" }} />       
             <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: '50px'}}>Customer Service</h1>
             <Row className="mt-5">
               <Col md={10} style={{color: 'white'}}>

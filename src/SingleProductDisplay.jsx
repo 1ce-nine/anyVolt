@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useCart } from "./shopping_cart/CartContext";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 export default function SingleProductDisplay() {
   const { slug } = useParams();
@@ -43,6 +44,10 @@ export default function SingleProductDisplay() {
     <>
       <Header />
       <Container>
+      <Breadcrumbs labels={{
+        products: "Products",
+        [slug]: product.name
+      }} />
         <Row className="justify-content-center">
           <Col className="text-center">
             <h1 className="anyvolt-logo button-transparent">{name || "Unknown Product"}</h1>

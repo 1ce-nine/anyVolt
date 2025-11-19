@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 
 function ServiceCustomOrder() {
@@ -13,6 +14,12 @@ function ServiceCustomOrder() {
       <title>Custom Order Form</title>
       <Header />
       <main>
+        <Container>
+          <Breadcrumbs labels={{
+          services: "Services",
+          "customer-order": "Customer Order"
+          }} />
+        </Container>
         <Container className="py-5">
           <div
             style={{

@@ -6,6 +6,7 @@ import ProductLoader from "../ProductLoader";
 import FilterPanel from "../components/filters/FilterPanel"; 
 import { Container, Row, Col, Collapse, Button } from "react-bootstrap"; 
 import { Filter } from 'react-bootstrap-icons'; 
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Products() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function Products() {
       <Header />
       <main>
         <Container>
+        <Breadcrumbs labels={{ products: "Our Products"}} />
           <Row className="justify-content-center">
             <Col className="text-center">
               <h1 className="page-heading anyvolt-logo button-transparent" style={{fontSize: "50px"}}>Products</h1>
