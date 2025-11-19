@@ -329,13 +329,11 @@ body {
 }
 
 .breadcrumbs {
-  color: white;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  color: var(--text-color) !important;
 }
 
 .breadcrumbs a {
-  color: white;
+  color: var(--text-color) !important;
   text-decoration: none;
   opacity: 0.9;
 }

@@ -7,7 +7,7 @@ export default function Breadcrumbs({ labels = {} }) {
   let path = "";
 
   return (
-    <nav className="breadcrumbs" style={{ padding: "10px 0" }}>
+    <nav className="breadcrumbs button-transparent" style={{ padding: "10px 0" }}>
       <Link to="/">Home</Link>
 
       {segments.map((seg, i) => {
